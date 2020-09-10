@@ -1,0 +1,25 @@
+package com.kh.example.vo;
+
+public class Account {
+	int balance = 1000;
+
+	public synchronized void withDraw(int money) {
+
+		if (getBalance() >= money) {
+			try {
+				Thread thread = Thread.currentThread();
+				System.out.println(thread.getName() + " 출금 금액 ->> " + money);
+				Thread.sleep(1000);
+				balance = getBalance() - money;
+				System.out.println(thread.getName() + " balance: " + getBalance());
+
+			} catch (Exception e) {
+			}
+
+		}
+	}
+
+	public int getBalance() {
+		return balance;
+	}
+}

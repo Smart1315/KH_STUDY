@@ -1,0 +1,35 @@
+package com.kh.mini.view;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Test {
+
+	public Test() {
+		JFrame frame = new JFrame();
+		frame.setSize(250, 180);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		JPanel panel = new JPanel();
+		
+		JLabel idLabel = new JLabel("ID");
+		idLabel.setLocation(100, 100);
+		JTextField idText = new JTextField(20);
+		idText.setLocation(150, 100);
+		JLabel pwLabel = new JLabel("PW");
+		
+		panel.add(idLabel);
+		panel.add(idText);
+		
+		
+		frame.add(panel);
+		
+		frame.setVisible(true);
+	}
+
+
+
+}

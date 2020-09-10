@@ -1,0 +1,26 @@
+package com.kh.board.model.vo;
+
+import java.sql.Date;
+
+public class Board {
+	// - bNo:int
+	// - title:String
+	// - content:String
+	// - createDate:Date
+	// - writer:String
+	
+	// + Board()
+	// + Board(bNo:int, title:String, content:String, createDate:Date, writer:String)
+	// + Board(bNo:int, title:String, content:String)
+	// + Board(title:String, content:String, writer:String)
+	// + Board(title:String, content:String)
+	// + getter/setter
+	// + toString():String
+	//		bNo, title, content, createDate, writer
+	
+	private int bNo;
+	private String title;
+	private String content;
+	private Date createDate;
+	private String writer
+}

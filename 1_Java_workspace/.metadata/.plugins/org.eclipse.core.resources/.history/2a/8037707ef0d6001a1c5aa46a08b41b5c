@@ -1,0 +1,26 @@
+package com.kh.example.chap03_component.view;
+
+import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.SpinnerListModel;
+
+public class G_Spinner {
+
+	public G_Spinner() {
+		JFrame frame = new JFrame();
+		frame.setSize(500, 120);
+
+		JPanel panel = new JPanel();
+
+		// ListModel
+		String[] items = { "소설", "잡지", "전공서적", "취미" };
+		SpinnerListModel listModel = new SpinnerListModel(items);
+		// NumberModel
+
+		// DateModel
+
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+}

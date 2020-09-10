@@ -1,0 +1,15 @@
+package com.kh.practice.charCheck.controller;
+
+import com.kh.practice.charCheck.exception.CharCheckException;
+
+public class CharacterController {
+
+	public CharacterController() {
+
+	}
+
+	public int countAlpha() throws CharCheckException {
+		
+
+	}
+}

@@ -1,0 +1,10 @@
+package com.kh.member.model.dao;
+
+public class MemberDAO {
+
+	public int inputLogin() {
+		
+		return 0;
+	}
+
+}

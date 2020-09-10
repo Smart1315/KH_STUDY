@@ -1,0 +1,15 @@
+package com.kh.mini.controller;
+
+import com.kh.mini.model.vo.Student;
+
+public class StudentController {
+	
+	public String signUp(Student student) {
+		if(student.getStudentId().equals("")) {
+			System.out.println("³Î");
+		}
+		
+		
+		return null;
+	}
+}

@@ -1,0 +1,12 @@
+package com.kh.member.controller;
+
+import com.kh.view.View;
+
+public class MemberController {
+	private View menu = new View();
+
+	public void login() {
+		menu.inputLogin();
+	}
+
+}

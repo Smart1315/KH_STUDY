@@ -1,0 +1,34 @@
+package com.kh.example.chap03_component.view;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class A_Text {
+
+	public A_Text() {
+		JFrame frame = new JFrame();
+		frame.setSize(800, 300);
+		
+		JPanel panel = new JPanel();
+		panel.setLayout(new GridLayout(3, 2));
+		panel.setSize(800,  300);
+
+		// TextField : 
+		JTextField id = new JTextField(30);
+		panel.add(new JLabel("ID"));
+		panel.add(id);
+		
+		JPasswordField password = new JPasswordField(30);
+
+		frame.add(panel, BorderLayout.NORTH);
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+}

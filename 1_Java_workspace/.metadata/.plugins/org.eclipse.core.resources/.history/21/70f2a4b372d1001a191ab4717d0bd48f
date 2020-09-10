@@ -1,0 +1,8 @@
+package com.kh.example.chap02_char.model.dao;
+
+public class CharDAO {
+
+	public void fileSave() {
+		// 파일에 문자 단위 데이터를 저장하고 싶다
+	}
+}

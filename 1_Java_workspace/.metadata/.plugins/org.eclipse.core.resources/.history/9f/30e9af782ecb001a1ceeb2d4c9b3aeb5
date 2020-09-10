@@ -1,0 +1,13 @@
+package com.kh.hw.member.controller;
+
+import com.kh.hw.member.model.vo.Member;
+
+public class MemberController {
+	Member[] m = new Member[SIZE];
+	
+	public static final int SIZE = 10;
+	
+	public int existMemberNum() {
+		
+	}
+}

@@ -1,0 +1,23 @@
+package com.kh.variable;
+
+public class A_Variable {
+	public void declareVariable() {
+		String str = "기차";
+		System.out.println(str);
+		str = new String("기차");
+		System.out.println(str);
+		str = "기차" + "칙칙폭폭";
+		System.out.println(str);
+		str = new String("기차" + "칙칙폭폭");
+		System.out.println(str);
+		str = "기차" + 123 + 45 + "출발";
+		System.out.println(str);
+		str = 123 + 45 + "기차" + "출발";
+		System.out.println(str);
+	}
+
+	public static void main(String[] args) {
+		
+	}
+
+}

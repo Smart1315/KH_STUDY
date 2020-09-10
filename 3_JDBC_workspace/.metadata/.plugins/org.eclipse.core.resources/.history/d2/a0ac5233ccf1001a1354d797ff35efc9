@@ -1,0 +1,18 @@
+package com.kh.board.model.vo;
+
+public class Board {
+	// - bNo:int
+	// - title:String
+	// - content:String
+	// - createDate:Date
+	// - writer:String
+	
+	// + Board()
+	// + Board(bNo:int, title:String, content:String, createDate:Date, writer:String)
+	// + Board(bNo:int, title:String, content:String)
+	// + Board(title:String, content:String, writer:String)
+	// + Board(title:String, content:String)
+	// + getter/setter
+	// + toString():String
+	//		bNo, title, content, createDate, writer
+}

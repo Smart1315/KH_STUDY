@@ -1,0 +1,27 @@
+package com.kh.member.model.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.Properties;
+
+import com.kh.member.model.vo.Member;
+
+public class MemberDAO {
+	Properties prop = null;
+	
+	public MemberDAO() {
+		
+	}
+
+	public int inputLogin(Connection conn, Member mem) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop
+		
+		pstmt = conn.
+		
+		return 0;
+	}
+
+}

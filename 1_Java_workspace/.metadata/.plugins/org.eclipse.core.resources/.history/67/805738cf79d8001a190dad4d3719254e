@@ -1,0 +1,48 @@
+package com.kh.mini.view;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class Test {
+
+	public Test() {
+		JFrame frame = new JFrame("·Î±×ÀÎ");
+		frame.getContentPane().setLayout(null);
+		frame.setSize(250, 180);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setSize(234, 141);
+		panel.setLocation(0, 0);
+
+		JLabel idLabel = new JLabel("ID");
+		idLabel.setSize(50, 50);
+		idLabel.setLocation(0, 0);
+
+		JTextField idText = new JTextField(20);
+		idText.setSize(50, 50);
+		idText.setLocation(10, 10);
+
+		JLabel pwLabel = new JLabel("PW");
+		pwLabel.setSize(50, 50);
+		pwLabel.setLocation(20, 20);
+		
+		JPasswordField pwText = new JPasswordField(20);
+		pwText.setSize(50, 50);
+		pwText.setLocation(30, 30);
+
+		panel.add(idLabel);
+		panel.add(idText);
+		panel.add(pwLabel);
+		panel.add(pwText);
+
+		frame.getContentPane().add(panel);
+		frame.setVisible(true);
+	}
+
+}

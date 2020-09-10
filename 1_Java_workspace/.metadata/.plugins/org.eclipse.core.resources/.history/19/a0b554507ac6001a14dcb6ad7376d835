@@ -1,0 +1,21 @@
+package com.kh.practice.array;
+
+public class ArrayPractice {
+
+	public void practice1() {
+		int[] iArr = new int[10];
+
+		for (int i = 0; i < iArr.length; i++) {
+			iArr[i] = i + 1;
+		}
+
+		for (int i = 0; i < iArr.length; i++) {
+			System.out.print(iArr[i] + " ");
+		}
+	}
+
+	public void practice2() {
+		
+	}
+
+}

@@ -1,0 +1,35 @@
+package com.kh.practice.set.controller;
+
+import java.util.HashSet;
+import java.util.TreeSet;
+
+import com.kh.practice.set.model.vo.Lottery;
+
+public class LotteryController {
+	private HashSet<Lottery> lottery = new HashSet<Lottery>();
+	private HashSet<Lottery> win = new HashSet<Lottery>();
+
+	public boolean insertObject(Lottery l) {
+		return lottery.add(l);
+	}
+
+	public boolean deleteobject(Lottery l) {
+		if(lottery.remove(l)) {
+			
+		} else {
+			return false;
+		}
+	}
+
+	public HashSet<Lottery> winObject() {
+
+	}
+
+	public TreeSet<Lottery> sortedWinObject() {
+
+	}
+
+	public boolean searchWinner(Lottery l) {
+
+	}
+}

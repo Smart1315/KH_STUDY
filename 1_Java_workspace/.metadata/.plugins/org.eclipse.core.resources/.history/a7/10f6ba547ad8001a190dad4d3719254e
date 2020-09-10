@@ -1,0 +1,75 @@
+package com.kh.mini.view;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class Login {
+
+	public Login() {
+		JFrame frame = new JFrame("학사관리시스템");
+		frame.getContentPane().setLayout(null);
+		frame.setSize(250, 180);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setSize(234, 141);
+		panel.setLocation(0, 0);
+
+		JLabel idLabel = new JLabel("ID");
+		idLabel.setSize(20, 21);
+		idLabel.setLocation(33, 26);
+
+		JTextField idText = new JTextField(20);
+		idText.setSize(130, 21);
+		idText.setLocation(63, 26);
+
+		JLabel pwLabel = new JLabel("PW");
+		pwLabel.setSize(20, 21);
+		pwLabel.setLocation(31, 67);
+		
+		JPasswordField pwText = new JPasswordField(20);
+		pwText.setSize(130, 21);
+		pwText.setLocation(63, 67);
+		
+		JButton loginBtn = new JButton("로그인");
+		loginBtn.setSize(92, 21);
+		loginBtn.setLocation(12, 110);
+		
+		JButton signUpBtn = new JButton("회원가입");
+		signUpBtn.setSize(92, 21);
+		signUpBtn.setLocation(130, 110);		
+
+		panel.add(idLabel);
+		panel.add(idText);
+		panel.add(pwLabel);
+		panel.add(pwText);
+		panel.add(loginBtn);
+		panel.add(signUpBtn);
+		
+		loginBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		signUpBtn.addActionListener(new ActionListener() {	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new SignUp();
+			}
+		});
+
+		frame.add(panel);
+		frame.setVisible(true);
+	}
+}

@@ -1,0 +1,108 @@
+package com.kh.hw.member.controller;
+
+import com.kh.hw.member.model.vo.Member;
+
+public class MemberController {
+	Member[] m = new Member[SIZE];
+
+	public static final int SIZE = 10;
+
+	public int existMemberNum() {
+		int count = 0;
+
+		for (int i = 0; i < m.length; i++) {
+			if (m[i] == null) {
+				continue;
+			}
+			count++;
+		}
+
+		return count;
+	}
+
+	public boolean checkId(String inputId) {
+		boolean res = false;
+
+		for (int i = 0; i < m.length; i++) {
+			if (m[i] == null) {
+				continue;
+			}
+			if (inputId.equals(m[i].getId())) {
+				res = true;
+				break;
+			}
+		}
+
+		return res;
+	}
+
+	public void insertMember(String id, String name, String password, String email, char gender, int age) {
+		for (int i = 0; i < m.length; i++) {
+			if (m[i] != null) {
+				continue;
+			} else {
+				m[i] = new Member(id, name, password, email, gender, age);
+				break;
+			}
+		}
+	}
+
+	public String searchId(String id) {
+		String inform = null;
+		for (int i = 0; i < m.length; i++) {
+			if (m[i] == null) {
+				continue;
+			} else {
+				if (id.equals(m[i].getId())) {
+					inform = m[i].inform();
+					break;
+				}
+			}
+		}
+
+		return inform;
+	}
+
+	public Member[] searchName(String name) {
+		int[] index = new int[10];
+		int icount = 0;
+		for (int i = 0; i < m.length; i++) {
+			if (m[i] == null) {
+				continue;
+			} else {
+				if (name.equals(name)) {
+					index[icount++] = i;
+					break;
+				}
+			}
+		}
+	}
+
+	public Member[] searchEmail(String email) {
+
+	}
+
+	public boolean updatePassword(String id, String password) {
+
+	}
+
+	public boolean updateName(String id, String name) {
+
+	}
+
+	public boolean updateEmail(String id, String email) {
+
+	}
+
+	public boolean delete(String id) {
+
+	}
+
+	public void delete() {
+
+	}
+
+	public Member[] printAll() {
+
+	}
+}

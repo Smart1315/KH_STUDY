@@ -1,0 +1,23 @@
+package com.kh.example.chap02_layout.view;
+
+import javax.swing.JFrame;
+
+public class D_CardLayout extends JFrame {
+
+	public D_CardLayout() {
+		super("CardLayout");
+		setBounds(300, 200, 800, 500);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		setVisible(true);
+	}
+}

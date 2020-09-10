@@ -1,0 +1,14 @@
+package com.kh.mini.view;
+
+import javax.swing.JFrame;
+
+public class SignUp {
+
+	public SignUp() {
+		JFrame frame = new JFrame();
+		frame.setSize(250, 180);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
+}

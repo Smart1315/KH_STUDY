@@ -1,0 +1,10 @@
+package com.kh.member.model.service;
+
+public class MemberService {
+
+	public int inputLogin() {
+		
+		return 0;
+	}
+
+}

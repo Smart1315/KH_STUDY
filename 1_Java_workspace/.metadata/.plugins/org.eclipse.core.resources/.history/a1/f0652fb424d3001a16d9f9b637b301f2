@@ -1,0 +1,38 @@
+package com.kh.practice.set.view;
+
+import java.util.Scanner;
+
+import com.kh.practice.set.controller.LotteryController;
+
+public class LotteryMenu {
+	private Scanner sc = new Scanner(System.in);
+	private LotteryController lc = new LotteryController();
+
+	public void mainMenu() {
+		do {
+			System.out.println("========== KH 추첨 프로그램 ==========");
+			System.out.println("******* 메인 메뉴 *******");
+		} while (true);
+	}
+
+	public void insertObject() {
+
+	}
+
+	public void deleteObject() {
+
+	}
+
+	public void winObject() {
+
+	}
+
+	public sortedWinObject() {
+		
+	}
+
+	public searchWinner() {
+		
+	}
+
+}

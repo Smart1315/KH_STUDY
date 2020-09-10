@@ -1,0 +1,68 @@
+package com.kh.example.chap02_layout.view;
+
+import java.awt.CardLayout;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class D_CardLayout extends JFrame {
+
+	public D_CardLayout() {
+		super("CardLayout");
+		setBounds(300, 200, 800, 500);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+		// CardLayout
+		// Panel을 이용해서 카드 판을 겹쳐놓음(이벤트로 다른 판이 보이게 설정해야함)
+		CardLayout card = new CardLayout();
+		setLayout(card);
+
+		// 패널(Panel) 만들기
+		for (int i = 0; i < 5; i++) {
+			JPanel panel = new JPanel();
+			panel.add(new JLabel(Integer.toString(i + 1)));
+			
+			panel.addMouseListener(new MouseListener() {
+				
+				@Override
+				public void mouseReleased(MouseEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void mousePressed(MouseEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void mouseExited(MouseEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void mouseEntered(MouseEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					if(i == 4) {
+						card.next(pan);
+					} else {
+						
+					}
+					
+				}
+			});
+		}
+
+		setVisible(true);
+	}
+}

@@ -1,0 +1,44 @@
+package com.kh.mini.view;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class Login {
+
+	public Login() {
+		JFrame frame = new JFrame("학사정보시스템");
+		frame.setBounds(300, 200, 800, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		frame.setLayout(null);
+
+		JLabel lbName = new JLabel("ID");
+		lbName.setLocation(50, 100);
+		lbName.setSize(150, 50);
+
+		JTextField id = new JTextField(20);
+		id.setBounds(110, 100, 200, 50);
+
+		JLabel lbPw = new JLabel("PW");
+		lbPw.setLocation(50, 150);
+		lbPw.setSize(150, 50);
+
+		JPasswordField pw = new JTextField(20);
+		pw.setBounds(110, 100, 150, 50);
+
+		JPanel panel = new JPanel();
+		panel.setSize(500, 500);
+		panel.setLayout(null);
+
+		panel.add(lbName);
+		panel.add(id);
+		panel.add(pw);
+
+		frame.add(panel);
+
+		frame.setVisible(true);
+	}
+}

@@ -1,0 +1,32 @@
+package com.kh.example.chap03_component.view;
+
+import javax.swing.JFrame;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+public class J_Table {
+
+	public J_Table() {
+		JFrame frame = new JFrame();
+
+		String[] header = { "이름", "자바", "디비", "화면" };
+		Object[][] data = { { "강건강", 100, 95, 85 }, { "남나눔", 58, 95, 78 }, { "도대담", 42, 14, 100 },
+				{ "류라라", 65, 72, 55 } };
+
+		// 1. 기본적인 테이블 만들기
+//		JTable table = new JTable(data, header);
+////		frame.add(table);
+//		JScrollPane scroll = new JScrollPane(table);
+//		scroll.setPreferredSize(new Dimension(200, 80));
+//		frame.add(scroll);
+		
+		// 2. DefaultTableModel 사용
+		DefaultTableModel dtm = new DefaultTableModel(data, header);
+		JTable table = new JTable(dtm);
+
+		frame.pack();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+
+	}
+}

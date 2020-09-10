@@ -1,0 +1,19 @@
+package com.kh.example.run;
+
+public class Run {
+
+	public static void main(String[] args) {
+//		Account acc = new Account("안영재");
+//
+//		Task1 task1 = new Task1(acc);
+//		Task2 task2 = new Task2(acc);
+//		Thread t1 = new Thread(task1, "t1-Thread");
+//		Thread t2 = new Thread(task2, "t2-Thread");
+//
+//		t1.start();
+//		t2.start();
+		
+		System.out.println((int) '가');
+	}
+
+}

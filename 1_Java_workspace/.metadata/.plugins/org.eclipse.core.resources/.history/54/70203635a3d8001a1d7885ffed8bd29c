@@ -1,0 +1,16 @@
+package com.kh.mini.model.dao;
+
+import com.kh.mini.model.vo.Student;
+
+public class StudentDAO {
+	
+	public boolean checkFile() {
+		
+	}
+
+	public boolean saveStudent(Student student) {
+		
+		
+		return true;
+	}
+}

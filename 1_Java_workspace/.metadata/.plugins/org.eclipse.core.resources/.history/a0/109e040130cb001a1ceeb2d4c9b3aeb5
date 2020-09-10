@@ -1,0 +1,76 @@
+package com.kh.hw.member.view;
+
+import java.util.Scanner;
+
+import com.kh.hw.member.controller.MemberController;
+
+public class MemberMenu {
+	private Scanner sc = new Scanner(System.in);
+	private MemberController mc = new MemberController();
+
+	public MemberMenu() {
+
+	}
+
+	public void mainMenu() {
+		int emn = mc.existMemberNum();
+		System.out.println("최대 등록 가능한 회원 수는" + MemberController.SIZE + "명 입니다.");
+		System.out.println("현재 등록된 회원 수는 " + emn + "명 입니다.");
+		
+		if(emn != MemberController.SIZE) {
+			
+		}
+	}
+
+	public void insertMember() {
+
+	}
+
+	public void searchMember() {
+
+	}
+
+	public void searchId() {
+
+	}
+
+	public void serachName() {
+
+	}
+
+	public void searchEmail() {
+
+	}
+
+	public void updateMember() {
+
+	}
+
+	public void updatePassword() {
+
+	}
+
+	public void updateName() {
+
+	}
+
+	public void updateEmail() {
+
+	}
+
+	public void deleteMember() {
+
+	}
+
+	public void deleteOne() {
+
+	}
+
+	public void deleteAll() {
+
+	}
+
+	public void printAll() {
+
+	}
+}

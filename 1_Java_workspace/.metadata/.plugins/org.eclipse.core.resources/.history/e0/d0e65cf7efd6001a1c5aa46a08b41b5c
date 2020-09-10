@@ -1,0 +1,10 @@
+package com.kh.example.chap03_component.view;
+
+import javax.swing.JFrame;
+
+public class G_Spinner {
+
+	public G_Spinner() {
+		JFrame frame = new JFrame();
+	}
+}

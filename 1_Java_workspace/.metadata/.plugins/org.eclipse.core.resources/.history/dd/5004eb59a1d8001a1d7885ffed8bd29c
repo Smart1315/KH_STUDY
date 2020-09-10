@@ -1,0 +1,23 @@
+package com.kh.mini.controller;
+
+import java.util.StringTokenizer;
+
+import com.kh.mini.model.dao.StudentDAO;
+import com.kh.mini.model.vo.Student;
+
+public class StudentController {
+	private StudentDAO sd = new StudentDAO();
+	
+	public int signUp(Student student) {
+		int result = 0;
+		//int studentNo, String studentId, String studentPw, String studentName, String studentDept, int studentGrade, String studentAddress, String studentPhone
+		StringTokenizer phoneToken = new StringTokenizer(student.getStudentPhone(), "-");
+		if(student.getStudentId().equals("") || student.getStudentPw().equals("") || student.getStudentName().equals("") || student.getStudentDept().equals("") || student.getStudentAddress().equals("") || phoneToken.countTokens() != 3) {
+			result = -1;
+		} else {
+			
+		}
+
+		return result;
+	}
+}

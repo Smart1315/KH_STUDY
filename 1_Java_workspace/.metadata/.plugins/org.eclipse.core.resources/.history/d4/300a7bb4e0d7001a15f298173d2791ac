@@ -1,0 +1,24 @@
+package com.kh.mini.view;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class SignUp {
+
+	public SignUp() {
+		JFrame frame = new JFrame("회원가입");
+		frame.setSize(250, 180);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JPanel panel = new JPanel();
+		
+		JLabel idLabel = new JLabel("ID"); 
+		JLabel pwLabel = new JLabel("PW");
+		
+		
+		frame.setVisible(true);
+	}
+}

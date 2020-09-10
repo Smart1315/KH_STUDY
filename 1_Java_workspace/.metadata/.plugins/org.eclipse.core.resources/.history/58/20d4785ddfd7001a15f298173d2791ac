@@ -1,0 +1,24 @@
+package com.kh.mini.view;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Login {
+
+	public Login() {
+		JFrame frame = new JFrame();
+		frame.setSize(250, 180);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		JPanel panel = new JPanel();
+		
+		JLabel idLabel = new JLabel("ID");
+		idLabel.setLocation(100, 100);
+		JLabel pwLabel = new JLabel("PW");
+		
+		
+		frame.setVisible(true);
+	}
+}

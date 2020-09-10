@@ -1,0 +1,22 @@
+package com.kh.mini.controller;
+
+import java.util.StringTokenizer;
+
+import com.kh.mini.model.vo.Student;
+
+public class StudentController {
+
+	public String signUp(Student student) {
+		String result = "";
+		// int studentNo, String studentId, String studentPw, String studentName, String
+		// studentDept, int studentGrade, String studentAddress, String studentPhone
+		StringTokenizer phoneToken = new StringTokenizer(student.getStudentPhone(), "-");
+		if (student.getStudentId().equals("") || student.getStudentPw().equals("")
+				|| student.getStudentName().equals("") || student.getStudentDept().equals("")
+				|| student.getStudentAddress().equals("") || phoneToken.countTokens() != 3) {
+			result = "회원정보를 모두 입력하세요.";
+		}
+
+		return result;
+	}
+}

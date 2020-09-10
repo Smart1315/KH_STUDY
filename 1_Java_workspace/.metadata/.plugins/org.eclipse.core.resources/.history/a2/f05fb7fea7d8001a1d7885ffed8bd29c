@@ -1,0 +1,60 @@
+package com.kh.mini.model.dao;
+
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.kh.mini.model.vo.Student;
+
+public class StudentDAO {
+	private String fileName = "Student.txt";
+	private List<Student> studentList = new ArrayList<Student>();
+
+	public boolean saveStudent(Student student) {
+
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName));
+				ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName));) {
+			while (true) {
+				Object o = ois.readObject();
+				if (o != null) {
+					studentList.add((Student) o);
+				}
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (EOFException e) {
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		if (studentList.contains(student)) {
+			return false;
+		} else {
+			studentList.add(student);
+		}
+
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName));) {
+			oos.writeObject(studentList);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return true;
+	}
+	
+	public void readStudent() {
+		
+	}
+}

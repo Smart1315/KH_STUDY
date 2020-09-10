@@ -1,0 +1,29 @@
+package com.kh.example.chap03_component.view;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+
+public class B_RadioButton {
+
+	public B_RadioButton() {
+		JFrame frame = new JFrame();
+		frame.setSize(300, 150);
+		
+		JPanel topPanel = new JPanel();
+		JLabel label = new JLabel("어떤 크기의 음료를 주문하시겠습니까?");
+		topPanel.add(label);
+		frame.add(topPanel, BorderLayout.NORTH);
+		
+		JPanel sizePanel = new JPanel();
+		JRadioButton small = new JRadioButton("Small Size");
+		JRadioButton medium = new JRadioButton("Medium Size");
+		JRadioButton large = new JRadioButton("Large Size");
+		sizePanel.add(small);
+		sizePanel.add(medium);
+		sizePanel.add(large);
+	}
+}

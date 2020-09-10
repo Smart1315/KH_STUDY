@@ -1,0 +1,42 @@
+package com.kh.mini.view;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class Test {
+
+	public Test() {
+		JFrame frame = new JFrame("회원가입");
+		frame.getContentPane().setLayout(null);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setResizable(false);
+		frame.setVisible(true);
+
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setSize(381, 469);
+		panel.setLocation(0, 0);
+
+		JLabel idLabel = new JLabel("ID");
+		JTextField idText = new JTextField(20);
+
+		JLabel pwLabel = new JLabel("PW");
+		JPasswordField pwText = new JPasswordField(20);
+		// int studentNo, String studentId, String studentPw, String studentName, String studentDept, int studentGrade
+		JLabel nameLabel = new JLabel("이름");
+		JTextField nameText = new JTextField(20);
+
+		panel.add(idLabel);
+		panel.add(idText);
+		panel.add(pwLabel);
+		panel.add(pwText);
+
+		frame.getContentPane().add(panel);
+
+	}
+
+}

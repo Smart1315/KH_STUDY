@@ -1,0 +1,8 @@
+package com.kh.example.chap03_component.view;
+
+public class I_Dialog {
+
+	public I_Dialog() {
+		
+	}
+}

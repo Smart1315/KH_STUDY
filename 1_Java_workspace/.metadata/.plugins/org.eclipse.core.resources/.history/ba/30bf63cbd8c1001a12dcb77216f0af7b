@@ -1,0 +1,20 @@
+package com.kh.practice.chap01;
+
+import java.util.Scanner;
+
+public class ControlPractice {
+
+	public void practice1() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("1. 입력");
+		System.out.println("2. 수정");
+		System.out.println("3. 조회");
+		System.out.println("4. 삭제");
+		System.out.println("7. 종료");
+		System.out.print("메뉴 번호를 입력하세요 : ");
+		
+		sc.close();
+	}
+	
+}

@@ -1,0 +1,58 @@
+package com.kh.example.array;
+
+public class B_ArrayCopy {
+	// 얕은 복사 : 배열의 주소만 복사
+	// 깊은 복사 : 새로운 배열을 만들어 실제 내부 값 복사
+
+	public void method1() {
+		int[] originArr = { 1, 2, 3, 4, 5 };
+		int[] copyArr = originArr; // 얕은 복사
+
+		for (int i = 0; i < originArr.length; i++) {
+			System.out.print(originArr[i] + " ");
+		}
+		System.out.println();
+
+		for (int i = 0; i < copyArr.length; i++) {
+			System.out.print(copyArr[i] + " ");
+		}
+		System.out.println();
+
+		originArr[0] = 99;
+
+		for (int i = 0; i < originArr.length; i++) {
+			System.out.print(originArr[i] + " ");
+		}
+		System.out.println();
+
+		for (int i = 0; i < copyArr.length; i++) {
+			System.out.print(copyArr[i] + " ");
+		}
+		System.out.println();
+
+		System.out.println("originArr의 주소 : " + originArr);
+		System.out.println("copyArr의 주소 : " + copyArr);
+	}
+
+	public void method2() {
+		int[] originArr = { 1, 2, 3, 4, 5 };
+		int[] copyArr = new int[5];
+
+		// 1. for문을 이용한 복사
+		for (int i = 0; i < originArr.length; i++) {
+			copyArr[i] = originArr[i];
+		}
+
+		for (int i = 0; i < originArr.length; i++) {
+			System.out.print(originArr[i] + " ");
+		}
+		System.out.println();
+
+		for (int i = 0; i < copyArr.length; i++) {
+			System.out.print(copyArr[i] + " ");
+		}
+		System.out.println();
+
+		// 2.System.arraycopy()
+	}
+}

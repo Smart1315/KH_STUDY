@@ -1,0 +1,20 @@
+package com.kh.example.chap03_component.view;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class H_Slider {
+
+	public H_Slider() {
+		JFrame frame = new JFrame();
+		frame.setSize(300, 200);
+		
+		
+		JPanel panel1 = new JPanel();
+		JLabel label = new JLabel("슬라이더를 움직여보세요", JLabel.CENTER);
+		panel1.add(label);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+}

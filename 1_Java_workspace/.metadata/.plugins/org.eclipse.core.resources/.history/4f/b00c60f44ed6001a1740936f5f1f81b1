@@ -1,0 +1,14 @@
+package com.kh.example.chap03_component.view;
+
+import javax.swing.JFrame;
+
+public class D_ImageLabel {
+
+	public D_ImageLabel() {
+		JFrame frame = new JFrame();
+		
+		frame.pack();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+}

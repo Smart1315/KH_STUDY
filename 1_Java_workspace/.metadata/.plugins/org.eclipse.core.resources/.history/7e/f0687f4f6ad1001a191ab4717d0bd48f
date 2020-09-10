@@ -1,0 +1,31 @@
+package com.kh.example.chap01_byte.model.dao;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+public class ByteDAO {
+
+	public void fileOpen() {
+
+		// 파일의 데이터를 바이트 단위로 읽어오고 싶다
+		try {
+			FileInputStream fis = new FileInputStream("a_byte.txt");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void fileSave() {
+
+		// 파일에 데이터를 바이트 단위로 저장하고 싶다
+		try {
+			FileOutputStream fos = new FileOutputStream("a_byte.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

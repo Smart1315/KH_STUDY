@@ -1,0 +1,8 @@
+package com.kh.hw.controller;
+
+public class Function {
+
+	public void calculator() {
+		
+	}
+}

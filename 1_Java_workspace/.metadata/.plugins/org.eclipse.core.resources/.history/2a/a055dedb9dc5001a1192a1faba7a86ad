@@ -1,0 +1,10 @@
+package com.kh.hw.controller;
+
+import java.util.Scanner;
+
+public class Function {
+
+	public void calculator() {
+		Scanner sc = new Scanner(System.in);
+	}
+}

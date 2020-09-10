@@ -1,0 +1,6 @@
+package com.kh.common;
+
+public class JDBCTemplate {
+	private static Connection conn = null;
+
+}

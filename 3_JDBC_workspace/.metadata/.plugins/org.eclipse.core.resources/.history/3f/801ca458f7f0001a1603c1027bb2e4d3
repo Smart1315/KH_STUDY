@@ -1,0 +1,22 @@
+package com.kh.model.vo;
+
+public class Member {
+	// - memberId : String
+	// - memberPwd : String
+	// - memberName : String
+	// - gender : char
+	// - email : String
+	// - phone
+	private String memberId;
+	private String memberPwd;
+	private String memberName;
+	private char gender;
+	private String email;
+	private String phone;
+	private int age;
+	private String address;
+
+	public Member() {
+	}
+	
+}

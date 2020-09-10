@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 packages to &apos;01_variable/src&apos;&#x0D;&#x0A;- Original project: &apos;practice&apos;&#x0D;&#x0A;- Destination element: &apos;01_variable/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     practice/src/com.kh.practice2.func&#x0D;&#x0A;     practice/src/com.kh.practice1.func&#x0D;&#x0A;     practice/src/com.kh.practice2.run&#x0D;&#x0A;     practice/src/com.kh.practice1.run" description="Copy packages" destination="=01_variable/src" element1="/src&lt;com.kh.practice2.func" element2="/src&lt;com.kh.practice1.func" element3="/src&lt;com.kh.practice2.run" element4="/src&lt;com.kh.practice1.run" flags="589830" fragments="4" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1594121655567" version="1.0"/>
+</session>

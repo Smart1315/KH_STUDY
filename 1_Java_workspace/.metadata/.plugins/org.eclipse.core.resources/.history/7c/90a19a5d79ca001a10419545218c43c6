@@ -1,0 +1,13 @@
+package com.kh.homework.shape.controller;
+
+import com.kh.homework.shape.model.vo.Shape;
+
+public class ShapeController {
+	private Shape s = new Shape();
+	
+	public ShapeController() {
+		
+	}
+	
+	public calcPerimeter()
+}

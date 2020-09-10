@@ -1,0 +1,8 @@
+package com.kh.example.array;
+
+public class B_ArrayCopy {
+
+	public void method1() {
+		
+	}
+}

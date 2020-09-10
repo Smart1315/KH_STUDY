@@ -1,0 +1,34 @@
+package com.kh.mini.view;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class SignUp {
+
+	public SignUp() {
+		JFrame frame = new JFrame("회원가입");
+		frame.setSize(250, 180);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JPanel panel = new JPanel();
+		
+		JLabel idLabel = new JLabel("ID");
+		JTextField idText = new JTextField(20);
+		
+		JLabel pwLabel = new JLabel("PW");
+		JPasswordField pwText = new JPasswordField(20);
+		
+		panel.add(idLabel);
+		panel.add(idText);
+		panel.add(pwLabel);
+		panel.add(pwText);
+		
+		
+		frame.add(panel);
+		frame.setVisible(true);
+	}
+}

@@ -1,0 +1,26 @@
+package com.kh.mini.view;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Login {
+
+	public Login() {
+		JFrame frame = new JFrame();
+		frame.setBounds(300, 300, 593, 360);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JPanel panel = new JPanel();
+		
+		JLabel label = new JLabel();
+		label.setLayout(null);
+		
+		
+		
+		frame.setVisible(true);
+		
+	}
+
+
+}

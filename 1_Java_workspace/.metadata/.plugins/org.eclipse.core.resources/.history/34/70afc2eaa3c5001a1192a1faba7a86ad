@@ -1,0 +1,123 @@
+package com.kh.hw.controller;
+
+import java.util.Scanner;
+
+public class Function {
+
+	public void calculator() {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("첫 번째 정수 : ");
+		int num1 = sc.nextInt();
+		System.out.print("두 번째 정수 : ");
+		int num2 = sc.nextInt();
+		sc.nextLine();
+		System.out.print("연산자(+, -, x, /) : ");
+		char op = sc.nextLine().charAt(0);
+
+		int res = 0;
+
+		switch (op) {
+		case '+':
+			res = num1 + num2;
+			break;
+		case '-':
+			res = num1 - num2;
+			break;
+		case 'x':
+		case 'X':
+			res = num1 * num2;
+			break;
+		case '/':
+			if (num2 == 0) {
+				System.out.println("0으로 나눌 수 없습니다.");
+				res = 0;
+				break;
+			}
+			res = num1 / num2;
+			if (res == 0) {
+				System.out.println("0으로 나눌 수 없습니다.");
+				break;
+			}
+			break;
+		default:
+			System.out.println("잘못 입력하셨습니다.");
+			break;
+		}
+
+		System.out.println(num1 + " " + op + " " + num2 + " = " + res);
+
+	}
+
+	public void totalCalculator() {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("첫 번째 정수 : ");
+		int num1 = sc.nextInt();
+		System.out.print("두 번째 정수 : ");
+		int num2 = sc.nextInt();
+
+		if (num1 > num2) {
+			int temp = num1;
+			num1 = num2;
+			num2 = temp;
+		}
+
+		int res = 0;
+		for (int i = num1; i <= num2; i++) {
+			res += i;
+		}
+
+		System.out.println(num1 + "부터 " + num2 + "까지 정수들의 합 : " + res);
+	}
+
+	public void printProfile() {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("이름 : ");
+		String name = sc.nextLine();
+		System.out.print("나이 : ");
+		int age = sc.nextInt();
+		sc.nextLine();
+		System.out.print("성별 : ");
+		String gender = sc.nextLine();
+		System.out.print("성격 : ");
+		String chr = sc.nextLine();
+
+		System.out.println("이름 : " + name);
+		System.out.println("나이 : " + age);
+		System.out.println("성별 : " + gender);
+		System.out.println("성격 : " + chr);
+
+	}
+
+	public void printScore() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("이름 : ");
+		String name = sc.nextLine();
+		System.out.print("학년 : ");
+		int grade = sc.nextInt();
+		System.out.print("반 : ");
+		int group = sc.nextInt();
+		System.out.print("번 : ");
+		int num = sc.nextInt();
+		sc.nextLine();
+		System.out.print("성별(M/F) : ");
+		char gender = sc.nextLine().charAt(0);
+		System.out.print("성적 : ");
+		double score = sc.nextDouble();
+		
+		char grades;
+		
+		if(gender == 'M') {
+			gender = '남';
+		} else if (gender == 'F') {
+			
+		} else {
+			
+		}
+		
+		System.out.printf("%d학년 %d반 %d번 ");
+	}
+}

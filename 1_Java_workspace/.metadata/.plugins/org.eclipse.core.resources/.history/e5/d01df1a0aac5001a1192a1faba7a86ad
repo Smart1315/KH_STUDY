@@ -1,0 +1,9 @@
+package com.kh.example.array;
+
+public class A_Array {
+	// 배열은 같은 자료형의 변수를 하나의 묶음으로 다루는 것
+	
+	public void method1() {
+		
+	}
+}

@@ -1,0 +1,13 @@
+package com.kh.example.chap03_assist.part02_object.model.dao;
+
+import com.kh.example.chap03_assist.part02_object.model.vo.Member;
+
+public class ObjectDAO {
+
+	public void fileSave() {
+		Member[] mar = { new Member("user01", "pass01", "강건강", "kang123@kh.or.kr", 25, '남', 1250.7),
+						 new Member("user02", "pass02", "남나눔", "nam456@kh.or.kr", 17, '여', 1221.6),
+						 new Member("user03", "pass03", "도대담", "do789@kh.or.kr", 22, '남', 1234.6) };
+		
+	}
+}

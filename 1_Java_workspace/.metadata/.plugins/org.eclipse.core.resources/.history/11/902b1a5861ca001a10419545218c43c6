@@ -1,0 +1,28 @@
+package com.kh.example.chap06_method.model.vo;
+
+public class Trainee {
+	/*
+	 	- name : String
+	 	- ACADEMY : String = "KH"
+	 	- classRoom : char
+	 	- time : String
+	 	- score : double
+	 	------------------
+	 	
+	 	+ Trainee()
+	 	+ Trainee(name : String, classRoom : char, time : String, score : double)
+	 	
+	 	+ changeName(name : String) : void
+	 	+ pringName() : String
+	 	+ getACADEMY() : String
+	 	+ setClassRoom(classRoom : char) : void
+	 	+ showClassRoom() : char
+	 */
+	private String name;
+	private final String ACADEMY = "KH";
+	private char classRoom;
+	private String time;
+	private double score;
+	
+	
+}

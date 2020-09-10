@@ -1,0 +1,8 @@
+package com.kh.example.chap03_component.view;
+
+public class D_ImageLabel {
+
+	public D_ImageLabel() {
+		
+	}
+}

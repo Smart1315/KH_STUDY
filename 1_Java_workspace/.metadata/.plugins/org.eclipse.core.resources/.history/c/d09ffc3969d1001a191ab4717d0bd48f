@@ -1,0 +1,8 @@
+package com.kh.example.chap01_byte.model.dao;
+
+public class ByteDAO {
+
+	public void fineOpen() {
+		
+	}
+}

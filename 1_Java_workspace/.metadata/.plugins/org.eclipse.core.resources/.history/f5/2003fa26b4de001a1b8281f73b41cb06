@@ -1,0 +1,113 @@
+package ncs.test7;
+
+import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+public class ScoreFrame extends JFrame {
+	private static final long serialVersionUID = -6310652429994784176L;
+
+	private JTextField javaScore;
+	private JTextField sqlScore;
+	private JTextField total;
+	private JTextField average;
+	private JButton calcBtn;
+
+	public ScoreFrame() {
+		super("문제 7");
+		getContentPane().setLayout(new BorderLayout());
+		setSize(435, 379);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		JLabel titleLabel = new JLabel("점수를 입력하세요");
+		titleLabel.setFont(new Font("굴림", Font.BOLD, 45));
+		titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		titleLabel.setBorder(BorderFactory.createEmptyBorder(10, 12, 10, 12));
+
+		JPanel panel = new JPanel();
+		panel.setLayout(new BorderLayout());
+
+		JPanel nPanel = new JPanel();
+		nPanel.setBorder(BorderFactory.createEmptyBorder(0, 15, 0, 15));
+		nPanel.setLayout(new BorderLayout());
+
+		JPanel nwPanel = new JPanel();
+		JLabel javaLabel = new JLabel("자바 : ");
+		javaScore = new JTextField(10);
+
+		JPanel nePanel = new JPanel();
+		JLabel sqlLabel = new JLabel("SQL : ");
+		sqlScore = new JTextField(10);
+
+		JPanel ccPanel = new JPanel();
+		ccPanel.setBorder(BorderFactory.createEmptyBorder(85, 0, 0, 0));
+		calcBtn = new JButton("계산하기");
+
+		JPanel sPanel = new JPanel();
+		sPanel.setBorder(BorderFactory.createEmptyBorder(0, 15, 0, 15));
+		sPanel.setLayout(new BorderLayout());
+
+		JPanel swPanel = new JPanel();
+		JLabel totalLabel = new JLabel("총점 : ");
+		total = new JTextField(10);
+
+		JPanel sePanel = new JPanel();
+		JLabel averageLabel = new JLabel("평균 : ");
+		average = new JTextField(10);
+
+		nwPanel.add(javaLabel);
+		nwPanel.add(javaScore);
+
+		nePanel.add(sqlLabel);
+		nePanel.add(sqlScore);
+
+		nPanel.add(nwPanel, BorderLayout.WEST);
+		nPanel.add(nePanel, BorderLayout.EAST);
+
+		ccPanel.add(calcBtn);
+
+		swPanel.add(totalLabel);
+		swPanel.add(total);
+
+		sePanel.add(averageLabel);
+		sePanel.add(average);
+
+		sPanel.add(swPanel, BorderLayout.WEST);
+		sPanel.add(sePanel, BorderLayout.EAST);
+
+		panel.add(nPanel, BorderLayout.NORTH);
+		panel.add(ccPanel, BorderLayout.CENTER);
+		panel.add(sPanel, BorderLayout.SOUTH);
+
+		getContentPane().add(titleLabel, BorderLayout.NORTH);
+		getContentPane().add(panel, BorderLayout.CENTER);
+
+		setVisible(true);
+
+		calcBtn.addActionListener(new ActionHandler());
+	}
+
+	class ActionHandler implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			double java = Integer.parseInt(javaScore.getText());
+			double sql = Integer.parseInt(sqlScore.getText());
+
+			total.setText(String.valueOf(java + sql));
+			average.setText(String.valueOf((java + sql) / 2));
+		}
+
+	}
+
+}

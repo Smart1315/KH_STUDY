@@ -1,0 +1,45 @@
+package com.kh.practice.list.music.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.kh.practice.list.music.model.vo.Music;
+
+public class MusicController {
+	private List<Music> list = new ArrayList<Music>();
+	
+	public int addList(Music music) {
+		list.add(list.size(), music);
+		
+		return 0;
+	}
+	
+	public int addAtZero(Music music) {
+		
+	}
+	
+	public List<Music> printAll() {
+		
+	}
+	
+	public Music searchMusic(String title) {
+		
+	}
+	
+	public Music removeMusic(String title) {
+		
+	}
+	
+	public Music setMusic(String title, Music music) {
+		
+	}
+	
+	public int ascTitle() {
+		
+	}
+	
+	public int descSinger() {
+		
+	}
+	
+}

@@ -1,0 +1,23 @@
+package com.kh.model.vo;
+
+public class Employee {
+	// - empNo:int
+	// - empName:String
+	// - job:String
+	// - mgr:int
+	// - hireDate:Date
+	// - sal:int
+	// - comm:int
+	// - deptNo:int
+	
+	// + Employee()
+	// + Employee(job:String, sal:int, comm:int)
+	// + Employee(empNo:int, job:String, sal:int, comm:int)
+	// + Employee(empNo:int, empNmae:String, job:String, mgr:int, sal:int, comm:int, deptNo:int)
+	// + Employee(empNo:int, empName:String, job:String, mgr:int, hireDate:Date, sal:int, comm:int, deptNo:int)
+	// + getter/setter
+	// + toString():String
+	// 		empNo / empName / job / mgr / hireDate / sal / comm / deptNo
+	
+	
+}

@@ -1,0 +1,36 @@
+package com.kh.hw.controller;
+
+import java.util.Scanner;
+
+public class Function {
+
+	public void calculator() {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("첫 번째 정수 : ");
+		int num1 = sc.nextInt();
+		System.out.print("두 번째 정수 : ");
+		int num2 = sc.nextInt();
+		System.out.print("연산자(+, -, x, /) : ");
+		char op = sc.nextLine().charAt(0);
+
+		switch (op) {
+		case '+':
+
+			break;
+		case '-':
+
+			break;
+		case 'x':
+		case 'X':
+			int res = num1 / num2;
+			break;
+		case '/':
+			break;
+		default:
+			break;
+		}
+
+		sc.close();
+	}
+}

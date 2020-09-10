@@ -1,0 +1,10 @@
+package com.kh.example.chap03_component.view;
+
+import javax.swing.JFrame;
+
+public class A_Text {
+
+	public A_Text() {
+		JFrame frame = new JFrame();
+	}
+}

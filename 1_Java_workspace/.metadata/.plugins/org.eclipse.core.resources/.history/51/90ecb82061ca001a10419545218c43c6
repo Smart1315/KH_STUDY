@@ -1,0 +1,15 @@
+package com.kh.example.chap06_method.model.vo;
+
+public class Trainee {
+	/*
+	 	- name : String
+	 	- ACADEMY : String = "KH"
+	 	- classRoom : char
+	 	- time : String
+	 	- score : double
+	 */
+	private String name;
+	private final String ACADEMY = "KH";
+	
+	
+}

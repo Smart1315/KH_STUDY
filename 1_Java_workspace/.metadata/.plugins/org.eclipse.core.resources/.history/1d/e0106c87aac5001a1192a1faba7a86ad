@@ -1,0 +1,8 @@
+package com.kh.example.array;
+
+public class A_Array {
+
+	public void method1() {
+		
+	}
+}

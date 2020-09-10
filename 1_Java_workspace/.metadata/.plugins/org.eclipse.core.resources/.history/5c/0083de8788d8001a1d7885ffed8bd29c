@@ -1,0 +1,17 @@
+package com.kh.mini.controller;
+
+import com.kh.mini.model.vo.Student;
+
+public class StudentController {
+	
+	public String signUp(Student student) {
+		String result = "";
+		
+		if(student.getStudentId().equals("") || student.getStudentPw().equals("")) {
+			result = "회원정보를 모두 입력하세요.";
+		}
+		
+		
+		return result;
+	}
+}

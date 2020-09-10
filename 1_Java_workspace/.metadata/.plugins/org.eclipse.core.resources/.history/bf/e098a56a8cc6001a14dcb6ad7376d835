@@ -1,0 +1,8 @@
+package com.kh.practice.dimension;
+
+public class DimensionPractice {
+
+	public void practice1() {
+	}
+
+}

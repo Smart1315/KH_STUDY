@@ -1,0 +1,57 @@
+package com.kh.mini.view;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class Login {
+
+	public Login() {
+		JFrame frame = new JFrame();
+		frame.setSize(250, 180);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		JPanel panel = new JPanel();
+		
+		JLabel idLabel = new JLabel("ID");
+		JTextField idText = new JTextField(20);
+		JLabel pwLabel = new JLabel("PW");
+		JPasswordField pwText = new JPasswordField(20);
+		
+		JButton loginBtn = new JButton("로그인");
+		JButton signUpBtn = new JButton("회원가입");
+		
+		panel.add(idLabel);
+		panel.add(idText);
+		panel.add(pwLabel);
+		panel.add(pwText);
+		
+		panel.add(loginBtn);
+		
+		loginBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		signUpBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+
+		frame.add(panel);
+		frame.setVisible(true);
+	}
+}

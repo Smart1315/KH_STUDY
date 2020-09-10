@@ -1,0 +1,46 @@
+package com.kh.practice.array;
+
+import java.util.Scanner;
+
+public class ArrayPractice {
+
+	public void practice1() {
+		int[] iArr = new int[10];
+
+		for (int i = 0; i < iArr.length; i++) {
+			iArr[i] = i + 1;
+		}
+
+		for (int i = 0; i < iArr.length; i++) {
+			System.out.print(iArr[i] + " ");
+		}
+	}
+
+	public void practice2() {
+		int[] iArr = new int[10];
+
+		for (int i = 0; i < iArr.length; i++) {
+			iArr[i] = 10 - i;
+		}
+
+		for (int i = 0; i < iArr.length; i++) {
+			System.out.print(iArr[i] + " ");
+		}
+	}
+
+	public void practice3() {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("양의 정수 : ");
+		int num = sc.nextInt();
+
+		if (num < 1) {
+			System.out.println("양의 정수를 입력하세요.");
+			sc.close();
+			return;
+		}
+
+		sc.close();
+	}
+
+}

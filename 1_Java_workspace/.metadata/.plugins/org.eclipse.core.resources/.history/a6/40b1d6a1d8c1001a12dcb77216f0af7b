@@ -1,0 +1,11 @@
+package com.kh.practice.chap01;
+
+import java.util.Scanner;
+
+public class ControlPractice {
+
+	public void practice1() {
+		Scanner sc = new Scanner(System.in);
+	}
+	
+}

@@ -1,0 +1,10 @@
+package com.kh.mini.controller;
+
+public class StudentController {
+
+
+	
+	public signUp() {
+		
+	}
+}

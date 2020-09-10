@@ -1,0 +1,11 @@
+package com.kh.example.chap02_char.model.dao;
+
+import java.io.FileWriter;
+
+public class CharDAO {
+
+	public void fileSave() {
+		// 파일에 문자 단위 데이터를 저장하고 싶다
+		FileWriter fw = new FileWriter("b_char.txt");
+	}
+}

@@ -1,0 +1,12 @@
+package com.kh.mini.controller;
+
+public class StudentController {
+
+
+	
+	public String signUp() {
+		
+		
+		return null'
+	}
+}

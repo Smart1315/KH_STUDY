@@ -1,0 +1,12 @@
+package com.kh.example.chap05_constructor.model.vo;
+
+import java.util.Date;
+
+public class User {
+	private String userId;
+	private String userPwd;
+	private String userName;
+	private Date enrollDate;
+	
+	
+}

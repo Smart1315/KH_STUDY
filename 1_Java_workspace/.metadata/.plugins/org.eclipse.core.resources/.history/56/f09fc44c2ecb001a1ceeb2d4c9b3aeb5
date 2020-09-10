@@ -1,0 +1,8 @@
+package com.kh.hw.member.controller;
+
+
+public class MemberController {
+	Member[] m = new Member[SIZE];
+	
+	public static final int SIZE = 10;
+}

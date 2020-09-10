@@ -1,0 +1,22 @@
+package com.kh.mini.model.dao;
+
+import java.io.File;
+
+import com.kh.mini.model.vo.Student;
+
+public class StudentDAO {
+	private String fileName = "Student.txt";
+	
+	public boolean checkFile() {
+		File f = new File(fileName);
+		if (!f.isFile()) {
+			f.mkdirs();
+		}	
+	}
+
+	public boolean saveStudent(Student student) {
+		
+		
+		return true;
+	}
+}

@@ -1,0 +1,11 @@
+package com.kh.controller;
+
+public class EmployeeController {
+
+	public void selectAll() {
+		
+		
+	}
+
+	
+}

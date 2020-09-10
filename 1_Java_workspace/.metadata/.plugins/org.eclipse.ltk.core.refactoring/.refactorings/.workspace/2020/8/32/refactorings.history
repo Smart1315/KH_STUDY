@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 20 resources" deleteContents="false" description="Delete 20 resources" element1="/0_myProject" element10="/08_inheritance" element11="/09_polymorphism" element12="/10_API" element13="/11_Exception" element14="/12_IO" element15="/13_Collection" element16="/Homework1_Logic" element17="/Homework2_OOP" element18="/Homework3_ObjectArray" element19="/Homework4_Inheritance" element2="/00_myFirstProject" element20="/Homework5_Polymorphism" element3="/01_variable" element4="/02_operator" element5="/03_control" element6="/04_array" element7="/05_dimensionalArray" element8="/06_ObjectOrientedProgramming" element9="/07_objectArray" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="20" stamp="1596436580936"/>
+</session>

@@ -1,0 +1,24 @@
+package com.kh.example.run;
+
+import com.kh.example.dto.Task1;
+import com.kh.example.dto.Task2;
+import com.kh.example.vo.Account;
+
+public class Run {
+	
+	public static void main(String[] args) {
+		Account acc = new Account();
+		
+		Task1 task1 = new Task1();
+		Task2 task2 = new Task2();
+		Thread t1 = new Thread(task1);
+		Thread t2 = new Thread(task2);
+
+		t1.setName("t1-Thread");
+		t2.setName("t2-Thread");
+
+		t1.start();
+		t2.start();
+	}
+
+}

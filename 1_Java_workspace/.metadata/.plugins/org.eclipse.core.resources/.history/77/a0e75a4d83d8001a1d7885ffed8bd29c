@@ -1,0 +1,96 @@
+package com.kh.mini.view;
+
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class Test {
+
+	public Test() {
+		JFrame frame = new JFrame("회원가입");
+		frame.setSize(257, 288);
+		frame.getContentPane().setLayout(null);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setResizable(false);
+
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setSize(251, 259);
+		panel.setLocation(0, 0);
+
+		JLabel idLabel = new JLabel("ID");
+		idLabel.setSize(27, 26);
+		idLabel.setLocation(37, 22);
+		JTextField idText = new JTextField(20);
+		idText.setSize(142, 26);
+		idText.setLocation(65, 23);
+
+		JLabel pwLabel = new JLabel("PW");
+		pwLabel.setSize(27, 26);
+		pwLabel.setLocation(37, 58);
+		JPasswordField pwText = new JPasswordField(20);
+		pwText.setSize(142, 26);
+		pwText.setLocation(65, 59);
+		
+		JLabel nameLabel = new JLabel("이름");
+		nameLabel.setSize(27, 26);
+		nameLabel.setLocation(37, 93);
+		JTextField nameText = new JTextField(20);
+		nameText.setSize(142, 26);
+		nameText.setLocation(65, 95);
+
+		JLabel deptLabel = new JLabel("학과");
+		deptLabel.setSize(27, 26);
+		deptLabel.setLocation(37, 129);
+		JTextField deptText = new JTextField(20);
+		deptText.setSize(142, 26);
+		deptText.setLocation(65, 131);
+
+		JLabel gradeLabel = new JLabel("학년");
+		gradeLabel.setSize(27, 26);
+		gradeLabel.setLocation(37, 165);
+		Integer[] grade = { 1, 2, 3, 4 };
+		JComboBox gradeCBox = new JComboBox(grade);
+		gradeCBox.setSize(142, 26);
+		gradeCBox.setLocation(65, 167);
+		
+		JLabel addrLabel = new JLabel("주소");
+		addrLabel.setSize(27, 26);
+		addrLabel.setLocation(52, 221);
+		
+		JTextField addrText = new JTextField(20);
+		addrText.setSize(142, 26);
+		addrText.setLocation(12, 23);
+		
+		JLabel phoneLabel = new JLabel("휴대전화");
+		phoneLabel.setSize(27, 26);
+		phoneLabel.setLocation(37, 201);
+		
+		JTextField phoneText = new JTextField(20);
+		phoneText.setSize(142, 26);
+		phoneText.setLocation(65, 203);
+
+		panel.add(idLabel);
+		panel.add(idText);
+		panel.add(pwLabel);
+		panel.add(pwText);
+		panel.add(nameLabel);
+		panel.add(nameText);
+		panel.add(deptLabel);
+		panel.add(deptText);
+		panel.add(gradeLabel);
+		panel.add(gradeCBox);
+		panel.add(addrLabel);
+		panel.add(addrText);
+		panel.add(phoneLabel);
+		panel.add(phoneText);
+
+		frame.getContentPane().add(panel);
+		
+		frame.setVisible(true);
+	}
+}

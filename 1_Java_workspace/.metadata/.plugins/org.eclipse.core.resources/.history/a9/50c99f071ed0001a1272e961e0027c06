@@ -1,0 +1,26 @@
+package com.kh.practice.leap.controller;
+
+import java.util.Calendar;
+
+public class LeapController {
+
+	public boolean isLeapYear(int year) {
+		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public long leapDate(Calendar c) {
+
+		for (int i = 1; i <= c.get(Calendar.YEAR); i++) {
+			if(i == c.get(Calendar.YEAR)) {
+				
+			} else {
+				
+			}
+		}
+	}
+
+}

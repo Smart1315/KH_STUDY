@@ -1,0 +1,39 @@
+package com.kh.practice.dimension;
+
+public class DimensionPractice {
+
+	public void practice1() {
+		String[][] sArr = new String[3][3];
+
+		for (int i = 0; i < sArr.length; i++) {
+			for (int j = 0; j < sArr[i].length; j++) {
+				sArr[i][j] = "(" + i + ", " + j + ")";
+			}
+		}
+
+		for (int i = 0; i < sArr.length; i++) {
+			for (int j = 0; j < sArr[i].length; j++) {
+				System.out.print(sArr[i][j]);
+			}
+			System.out.println();
+		}
+
+	}
+
+	public void practice2() {
+		int[][] iArr = new int[4][4];
+
+		for (int i = 0; i < iArr.length; i++) {
+			for (int j = 0; j < iArr[i].length; j++) {
+				iArr[i][j] = (i * iArr[i].length) + j + 1;
+			}
+		}
+		
+		for (int i = 0; i < iArr.length; i++) {
+			for (int j = 0; j < iArr[i].length; j++) {
+				System.out.printf("%2d ", iArr[i][j]);
+			}
+		}
+	}
+
+}

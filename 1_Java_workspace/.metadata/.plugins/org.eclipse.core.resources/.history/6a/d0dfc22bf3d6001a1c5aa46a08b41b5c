@@ -1,0 +1,14 @@
+package com.kh.example.chap03_component.view;
+
+import javax.swing.JFrame;
+
+public class H_Slider {
+
+	public H_Slider() {
+		JFrame frame = new JFrame();
+		frame.setSize(300, 200);
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+}

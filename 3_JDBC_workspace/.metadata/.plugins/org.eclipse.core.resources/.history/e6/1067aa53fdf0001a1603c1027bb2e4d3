@@ -1,0 +1,38 @@
+package com.kh.common;
+
+import java.io.FileReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Properties;
+
+public class JDBCTemplate {
+	private static Connection conn = null;
+	
+	private JDBCTemplate() {
+	}
+	
+	public static Connection getConnection() {
+		
+		if (conn == null) {
+			try {
+				
+				Properties prop = new Properties();
+				prop.load(new FileReader("driver.properties"));
+				
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				
+				conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1545:xe", "MEMBER", "MEMBER");
+				
+				conn.setAutoCommit(false);
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return conn;
+	}
+
+}

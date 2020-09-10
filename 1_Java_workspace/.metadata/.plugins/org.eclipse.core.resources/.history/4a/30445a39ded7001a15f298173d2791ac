@@ -1,0 +1,20 @@
+package com.kh.mini.view;
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
+import javax.swing.JFrame;
+
+public class Login {
+
+	public Login() {
+		JFrame frame = new JFrame();
+		frame.setSize(250, 180);
+
+		Dimension dimen = Toolkit.getDefaultToolkit().getScreenSize();
+		frame.setLocation((int) (dimen.getWidth() / 2), (int) (dimen.getHeight() / 2));
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		frame.setVisible(true);
+	}
+}

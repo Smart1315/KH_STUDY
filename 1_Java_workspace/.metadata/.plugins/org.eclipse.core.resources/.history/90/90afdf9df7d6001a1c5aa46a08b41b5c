@@ -1,0 +1,14 @@
+package com.kh.example.chap03_component.view;
+
+import javax.swing.JFrame;
+
+public class I_Dialog {
+
+	public I_Dialog() {
+		JFrame frame = new JFrame();
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+	
+}

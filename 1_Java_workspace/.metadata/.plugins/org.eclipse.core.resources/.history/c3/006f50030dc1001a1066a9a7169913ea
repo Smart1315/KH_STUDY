@@ -1,0 +1,9 @@
+package com.kh.example.chap01.condition;
+
+public class A_If {
+	// 단독 if
+	// if (조건식) {
+	//		실행할 문장 
+	// }
+	// 조건식의 결과 값이 true면 {} 안의 코드 실행, false이면 무시됨
+}

@@ -1,0 +1,8 @@
+package com.kh.example.chap03_assist.part02_object.model.dao;
+
+public class ObjectDAO {
+	
+	public void fileSave() {
+		
+	}
+}

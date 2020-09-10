@@ -1,0 +1,10 @@
+package com.kh.variable;
+
+public class C_Cast {
+	
+	public void rule1() {
+		int num = 'a';
+		// 4byte <- 2byte : 자동 형변환
+		System.out.println("num : " + num);
+	}
+}

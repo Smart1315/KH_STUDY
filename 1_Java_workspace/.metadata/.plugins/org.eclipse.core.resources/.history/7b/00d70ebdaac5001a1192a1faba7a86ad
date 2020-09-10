@@ -1,0 +1,14 @@
+package com.kh.example.array;
+
+public class A_Array {
+	// 배열은 같은 자료형의 변수를 하나의 묶음으로 다루는 것
+	// 저장된 값마다 인덱스가 지정되는데 인덱스는 0부터 시작
+	
+	// 배열 선언
+	//		자료형[] 배열명;
+	//		자료형 배열명[];
+	
+	public void method1() {
+		
+	}
+}

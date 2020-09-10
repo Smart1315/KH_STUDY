@@ -1,0 +1,31 @@
+package com.kh.homework.shape.view;
+
+import java.util.Scanner;
+
+import com.kh.homework.shape.controller.ShapeController;
+
+public class ShapeMenu {
+	private Scanner sc = new Scanner(System.in);
+	private ShapeController spr = new ShapeController();
+	
+	public void inputMenu() {
+		
+	}
+	
+	public void triangleMenu() {
+		
+	}
+	
+	public void squareMenu() {
+		
+	}
+	
+	public void inputData(int type, int menuNum) {
+		
+	}
+	
+	public void printInform(int type) {
+		
+	}
+
+}

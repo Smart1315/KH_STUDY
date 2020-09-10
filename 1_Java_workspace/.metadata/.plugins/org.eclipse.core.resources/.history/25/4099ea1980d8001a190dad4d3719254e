@@ -1,0 +1,62 @@
+package com.kh.mini.view;
+
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class Test {
+
+	public Test() {
+		JFrame frame = new JFrame("회원가입");
+		frame.getContentPane().setLayout(null);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setResizable(false);
+		frame.setVisible(true);
+
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setSize(381, 469);
+		panel.setLocation(0, 0);
+
+		JLabel idLabel = new JLabel("ID");
+		idLabel.setSize(381, 469);
+		idLabel.setLocation(0, 0);
+		JTextField idText = new JTextField(20);
+		idText.setSize(381, 469);
+		idText.setLocation(0, 0);
+
+		JLabel pwLabel = new JLabel("PW");
+		pwLabel.setSize(381, 469);
+		pwLabel.setLocation(0, 0);
+		JPasswordField pwText = new JPasswordField(20);
+		pwText.setSize(381, 469);
+		pwText.setLocation(0, 0);
+		
+		JLabel nameLabel = new JLabel("이름");
+		nameLabel.setSize(381, 469);
+		nameLabel.setLocation(0, 0);
+		JTextField nameText = new JTextField(20);
+		nameText.setSize(381, 469);
+		nameText.setLocation(0, 0);
+
+		JLabel deptLabel = new JLabel("학과");
+		JTextField deptText = new JTextField(20);
+
+		JLabel gradeLabel = new JLabel("학년");
+		Integer[] grade = { 1, 2, 3, 4 };
+		JComboBox<Integer> gradeCBox = new JComboBox<Integer>(grade);
+
+		panel.add(idLabel);
+		panel.add(idText);
+		panel.add(pwLabel);
+		panel.add(pwText);
+
+		frame.getContentPane().add(panel);
+
+	}
+
+}

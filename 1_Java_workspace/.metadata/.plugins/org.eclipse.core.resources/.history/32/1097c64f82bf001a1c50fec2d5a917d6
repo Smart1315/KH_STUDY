@@ -1,0 +1,7 @@
+package com.kh.variable;
+
+public class C_Cast {
+	public void rule1() {
+		
+	}
+}

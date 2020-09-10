@@ -1,0 +1,19 @@
+package com.kh.member.model.service;
+
+import static com.kh.common.JDBCTemplate.getConnection;
+
+import java.sql.Connection;
+
+import com.kh.model.dao.MemberDAO;
+
+public class MemberService {
+
+	public int inputLogin() {
+		Connection conn = getConnection();
+
+		MemberDAO mDAO = new MemberDAO();
+		
+		return 0;
+	}
+
+}

@@ -1,0 +1,68 @@
+package com.kh.homework.employee.view;
+
+import java.util.Scanner;
+
+import com.kh.homework.employee.controller.EmployeeController;
+
+public class EmployeeMenu {
+	private Scanner sc = new Scanner(System.in);
+	private EmployeeController ec = new EmployeeController();
+
+	public EmployeeMenu() {
+		while (true) {
+			System.out.println("1. 사원 추가");
+			System.out.println("2. 사원 수정");
+			System.out.println("3. 사원 삭제");
+			System.out.println("4. 사원 출력");
+			System.out.println("9. 프로그램 종료");
+			System.out.print("메뉴 번호를 누르세요 : ");
+			int num = sc.nextInt();
+			sc.nextLine();
+
+			switch (num) {
+			case 1:
+				insertEmp();
+				break;
+			case 2:
+				updateEmp();
+				break;
+			case 3:
+				deleteEmp();
+				break;
+			case 4:
+				printEmp();
+				break;
+			case 9:
+				
+				return;
+
+			default:
+				break;
+			}
+		}
+	}
+
+	public void insertEmp() {
+		System.out.print("사원 번호 : "); // int empNo, String name, char gender, String phone
+		int empNo = sc.nextInt();
+		sc.nextLine();
+		System.out.print("사원 이름 : ");
+		String name = sc.nextLine();
+		System.out.print("사원 성별 : ");
+		char gender = sc.nextLine().charAt(0);
+		System.out.print("전화 번호 : ");
+		String phone = sc.nextLine();
+	}
+
+	public void updateEmp() {
+
+	}
+
+	public void deleteEmp() {
+
+	}
+
+	public void printEmp() {
+
+	}
+}

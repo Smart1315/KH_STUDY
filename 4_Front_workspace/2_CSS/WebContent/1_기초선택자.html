@@ -14,6 +14,48 @@
 	
 	div[name=name1]{background: orange;}
 	div[name~=name1]{background: brown;} /* 공백구분 */
+	div[name|=name1]{background: skyblue;}
+	div[name^=name] {background: white;}
+	div[class$=class]{background: coral;}
+	div[class*=v-c]{background: blue;}
+	
+	#testDiv>h4{background: orangered;}
+	/* #testDiv li{background: yellowgreen;} */
+	#testDiv>ul>li{background: yellowgreen;}
+	#testDiv ul{background: olive; color: white;}
+	
+	#div-test1{background: red;}
+	#div-test2+div{background: chocolate;}
+	#div-test3~div{background: lightsalmon;}
+	
+	#active-test, #hover-test{color: white; width: 300px; height: 100px;}
+	#active-test:active{background: gold; color: black;}
+	#hover-test:hover{background: gold; color: black;}
+	
+	input[type=checkbox]:checked {width: 20px; height: 20px;}
+	#userId:focus, #userPwd:focus {background: red;}
+	option:disabled {background: red; color: white;}
+	option:enabled {background: yellowgreen;}
+	
+	#test1 p:first-child {background: red; color: white;}
+	#test1 p:last-child {background: orange; color: white;} /* 위치먼저 구분하기 때문에 적용 안 됨*/
+	#test1 p:nth-child(2n) {background: yellow;}
+	#test1 p:nth-last-child(4) {background: green; color: white;}
+	
+	#test2 p:first-of-type {background: red; color: white;}
+	#test2 p:last-of-type {background: orange; color: white;} /* 마지막 p 태그 */
+	#test2 p:nth-of-type(2n) {background: yellow;}
+	#test2 p:nth-last-of-type(4) {background: green; color: white;}
+	
+	#test3 p::first-letter {font-size: 100px;}
+	#test3 p:first-line {background: beige;}
+	#test3 p:after{content: "태그 뒤에 추가";}
+	#test3 p:before {content: "태그 앞에 추가";}
+	#test3 p::selection{background: red; color: white;}
+	
+	#test4 li:not(:nth-child(2n-1)) {background: gray;} /* odd, even */
+	
+	
 </style>
 </head>
 <body>
@@ -85,7 +127,7 @@
     <!-- 5. 후손 선택자와 자손 선택자 -->
     <!-- 5-1. 후손/자손 선택자 적용 HTML판 -->
     <h2>자손 선택자와 후손 선택자</h2>
-    <p>자손 선택자 : ______________________ / 후손 선택자 : ______________________</p>
+    <p>자손 선택자 : 바로 아래의 요소 / 후손 선택자 : 하위 요소 전부</p>
     <pre>   
         - 자손 선택자 : 선택자>자손 선택자{설정 값;} <br>
         - 후손 선택자 : 선택자 후손선택자{설정 값;}
@@ -167,7 +209,7 @@
    <h2>구조 선택자</h2>
    <!-- 9-1. 일반 구조 선택자 -->
    <h3>일반 구조 선택자</h3>
-   <p>특정한 위치에 있는 태그 선택(______________________)</p>
+   <p>특정한 위치에 있는 태그 선택(위치로 구분)</p>
    <div id="test1">
       <p>테스트1</p>
       <p>테스트2</p>
@@ -178,7 +220,7 @@
    </div> 
    <!-- 9-3. 형태 구조 선택자 -->
    <h3>형태 구조 선택자</h3>
-   <p>특정한 위치에 있는 태그 선택(______________________)</p>
+   <p>특정한 위치에 있는 태그 선택(태그 별로 구분)</p>
    <div id="test2">
       <p>테스트1</p>
       <p>테스트2</p>
@@ -193,7 +235,7 @@
    <!-- 10. 문자 선택자 -->
    <!-- 10-1. 문자 선택자 적용 HTML판 -->
    <h2>문자 선택자</h2>
-   <p>______________________</p>
+   <p>태그 내부에서 특정 조건의 문자를 선택하는 선택자</p>
    <div id="test3">
       <p>
          대법원장은 국회의 동의를 얻어 대통령이 임명한다. 감사위원은 원장의 제청으로 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다. 국회는 국민의 보통·평등·직접·비밀선거에 의하여 선출된 국회의원으로 구성한다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다. 모든 국민은 자기의 행위가 아닌 친족의 행위로 인하여 불이익한 처우를 받지 아니한다. 공무원의 직무상 불법행위로 손해를 받은 국민은 법률이 정하는 바에 의하여 국가 또는 공공단체에 정당한 배상을 청구할 수 있다. 이 경우 공무원 자신의 책임은 면제되지 아니한다. 외국인은 국제법과 조약이 정하는 바에 의하여 그 지위가 보장된다. 국무회의는 정부의 권한에 속하는 중요한 정책을 심의한다. 국무위원은 국무총리의 제청으로 대통령이 임명한다. 사회적 특수계급의 제도는 인정되지 아니하며, 어떠한 형태로도 이를 창설할 수 없다. 국회는 헌법 또는 법률에 특별한 규정이 없는 한 재적의원 과반수의 출석과 출석의원 과반수의 찬성으로 의결한다. 가부동수인 때에는 부결된 것으로 본다. 대통령은 조국의 평화적 통일을 위한 성실한 의무를 진다. 국회의원은 국가이익을 우선하여 양심에 따라 직무를 행한다. 이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에 속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될 때까지 존속하며 그 직무를 행한다.
@@ -205,7 +247,7 @@
    <!-- 11. 부정 선택자 -->
    <!-- 11-1. 부정 선택자 적용 HTML판 -->
    <h2>부정 선택자</h2>
-   <p>______________________</p>
+   <p>선택자에 대해 반대로 적용하는 선택자</p>
    <ul id="test4">
       <li>테스트1</li>
       <li>테스트2</li>

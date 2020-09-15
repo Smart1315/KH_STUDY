@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>탭메뉴 만들기</title>
+<style>
+	#out  {
+		width: 800px;
+		background-color: #2A94FF;
+		color: white;
+		border-radius: 15px 15px 0px 0px;
+	}
+	#in {
+		width: 800px;
+		background-color: #313EFF;
+		color: white;
+		border-radius: 0px 0px 15px 15px;
+	}
+
+	ul {
+		list-style-type: none;
+		text-shadow: 2px 2px 1px black;
+	}
+	
+	ul li {
+		display: inline-block;
+		padding: 15px;
+	}
+	
+	#in {
+		position: absolute;
+		left: 8px;
+		top: 131px;
+	}
+	
+	#in ul {
+		display: none;
+	}
+	
+	
+	ul li~li {
+		margin-left: 25px;
+	}
+	
+	#out>ul>li:hover {
+		background-color: #2F68FF;
+		border-radius: 15px 15px 0px 0px;
+	}
+	
+	#out>ul>li:hover>#in>ul {
+		display: inline;
+	}
+	
+	#in>ul>li:hover {
+		color: #262A9F;
+	}
+
+
+	
+
+</style>
+</head>
+<body>
+	<h3>가로 탭 메뉴 만들기</h3>
+
+	<hr>
+
+	<div id="out">
+		<ul>
+			<li>Home</li>
+			<li>웹개발
+				<div id="in">
+					<ul>
+						<li>웹디자인</li>
+						<li>HTML5 + CSS3</li>
+						<li>JQuery</li>
+						<li>웹+ 모바일</li>
+					</ul>
+				</div>
+			</li>
+			<li>게시판
+				<div id="in">
+					<ul>
+						<li>Q & A</li>
+						<li>방명록</li>
+					</ul>
+				</div>
+			</li>
+			<li>프로필</li>
+		</ul>
+	</div>
+</body>
+</html>

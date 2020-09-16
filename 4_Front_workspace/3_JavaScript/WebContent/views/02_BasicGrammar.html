@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BasicGrammar</title>
+<style>
+	.area{
+		border: 1px solid red; height: 100px;
+	}
+</style>
+</head>
+<body>
+	<h1>기본 문법</h1>
+
+	<hr><hr>
+
+	<h2>변수와 자료형</h2>
+	<h3>변수 선언</h3>
+	<p>
+		함수 내부에서 'var 변수명;'으로 선언하면 지역변수가 됨<br>
+		함수 내부에서 '변수명;'으로 선언하거나 함수 밖에서 '변수명;' 혹은 'var 변수명;'으로 선언하면 전역변수가 됨<br>
+		전역변수와 지역변수가 동일한 이름인 결우 함수 내부에서 변수 명을 호출하면 지역변수가 우선권을 가짐<br>
+		전역변수 사용 시 'window.변수명' 혹은 'this.변수명'으로 표현하여 지역변수와 구분<br>
+		전역 변수는 해당window내에서 어디든 사용할 수 있으며 지역 변수는 해당 함수 내에서만 사용 가능
+	</p>
+	<script>
+		// 한줄 주석
+		/*
+			여러 줄
+			주석
+		*/
+
+		str1 = "전역변수";
+		var str2 = "var전역변수";
+
+		window.onload = function() {
+			// 페이지가 모두 로드가 되면 자동으로 실행하는 함수
+			// 한 페이지에서 하나의 window.onload 사용
+			var str1 = "지역변수1";
+			var str3 = "지역변수2";
+
+			console.log("str1 : " + str1); // 지역변수1
+			console.log("this.str1 : " + this.str1); // 전역변수
+			console.log("window.str1 : " + window.str1); // 전역변수
+
+			console.log("str2 : " + str2); // var전역변수
+			console.log("this.str2 : " + this.str2); // var전역변수
+			console.log("window.str2 : " + window.str2); // var전역변수
+
+			console.log("str3 : " + str3); // 지역변수2
+			console.log("this.str3 : " + this.str3); // undefined
+			console.log("window.str3 : " + window.str3); // undefined
+
+			what = "난 뭘까?"; // 전역변수
+			showWhat();
+		}
+		function showWhat(){
+			console.log(what); // 난 뭘까?
+			console.log(this.what); // 난 뭘까?
+			console.log(window.what); // 난 뭘까?
+		}
+
+	</script>
+</body>
+</html>

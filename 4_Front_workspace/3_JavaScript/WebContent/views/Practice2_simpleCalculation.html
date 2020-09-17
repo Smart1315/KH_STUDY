@@ -79,29 +79,29 @@
         <tr>
             <td><button id="C" value="C">C</button></td>
             <td><button id="bs" value="bs">bs</button></td>
-            <td><button id="%" value="%">%</button></td>
-            <td><button id="/" value="/">/</button></td>
+            <td><button name="op" id="%" value="%">%</button></td>
+            <td><button name="op" id="/" value="/">/</button></td>
         </tr>
         <tr>
-            <td><button id="7" value="7">7</button></td>
-            <td><button id="8" value="8">8</button></td>
-            <td><button id="9" value="9">9</button></td>
-            <td><button id="X" value="X">X</button></td>
+            <td><button name="numPad" id="7" value="7">7</button></td>
+            <td><button name="numPad" id="8" value="8">8</button></td>
+            <td><button name="numPad" id="9" value="9">9</button></td>
+            <td><button name="op" id="X" value="X">X</button></td>
         </tr>
         <tr>
-            <td><button id="4" value="4">4</button></td>
-            <td><button id="5" value="5">5</button></td>
-            <td><button id="6" value="6">6</button></td>
-            <td><button id="-" value="-">-</button></td>
+            <td><button name="numPad" id="4" value="4">4</button></td>
+            <td><button name="numPad" id="5" value="5">5</button></td>
+            <td><button name="numPad" id="6" value="6">6</button></td>
+            <td><button name="op" id="-" value="-">-</button></td>
         </tr>
         <tr>
-            <td><button id="1" value="1">1</button></td>
-            <td><button id="2" value="2">2</button></td>
-            <td><button id="3" value="3">3</button></td>
-            <td><button id="+" value="+">+</button></td>
+            <td><button name="numPad" id="1" value="1">1</button></td>
+            <td><button name="numPad" id="2" value="2">2</button></td>
+            <td><button name="numPad" id="3" value="3">3</button></td>
+            <td><button name="op" id="+" value="+">+</button></td>
         </tr>
         <tr>
-            <td colspan="2"><button id="0" value="0">0</button></td>
+            <td colspan="2"><button name="numPad" id="0" value="0">0</button></td>
             <td><button id="." value=".">.</button></td>
             <td><button id="=" value="=">=</button></td>
         </tr>
@@ -112,54 +112,41 @@
 
         var C = document.getElementById('C');
         var bs = document.getElementById('bs');
-        var mod = document.getElementById('%');
-        var div = document.getElementById('/');
 
-        var j = document.getElementById('7');
-        var i = document.getElementById('8');
-        var h = document.getElementById('9');
-        var mul = document.getElementById('X');
+        var op = document.getElementsByName('op');
+        var numPad = document.getElementsByName('numPad');
 
-        var g = document.getElementById('4');
-        var f = document.getElementById('5');
-        var e = document.getElementById('6');
-        var sub = document.getElementById('-');
-
-        var d = document.getElementById('1');
-        var c = document.getElementById('2');
-        var b = document.getElementById('3');
-        var add = document.getElementById('+');
-
-        var a = document.getElementById('0');
         var dot = document.getElementById('.');
         var res = document.getElementById('=');
        
         C.onclick = function() {
+            view.style.backgroundColor = "white";
+            view.style.color = "black";
             view.innerHTML = "";
         }
 
+       
+
         bs.onclick = function() {
-            view.innerHTML = view.innerHTML.slice(0, view.innerHTML.length - 1);
+            if(viewCheck(view)) {
+                view.innerHTML = view.innerHTML.slice(0, view.innerHTML.length - 1);
+            } else {
+                view.style.backgroundColor = "white";
+                view.style.color = "black";
+                view.innerHTML = "";
+            }
         }
 
-        a.onclick = function() { numClick(this); };
-        b.onclick = function() { numClick(this); };
-        c.onclick = function() { numClick(this); };
-        d.onclick = function() { numClick(this); };
-        e.onclick = function() { numClick(this); };
-        f.onclick = function() { numClick(this); };
-        g.onclick = function() { numClick(this); };
-        h.onclick = function() { numClick(this); };
-        i.onclick = function() { numClick(this); };
-        j.onclick = function() { numClick(this); };
+        for(var i in numPad) {
+            numPad[i].onclick = function() { numClick(this) };
+        }
 
-        add.onclick = function() { opClick(this); };
-        sub.onclick = function() { opClick(this); };
-        mul.onclick = function() { opClick(this); };
-        div.onclick = function() { opClick(this); };
-        mod.onclick = function() { opClick(this); };
+        for(var i in op) {
+            op[i].onclick = function() { opClick(this) };
+        }
 
         function numClick(button) {
+            if (!viewCheck(view)) { return; }
             var v = view.innerHTML;
             if(v.length == 0 || Number(v) != 0 || v.indexOf('.') != -1) {
                view.innerHTML += button.value;
@@ -167,24 +154,31 @@
         }
 
         function opClick(button) {
+            if (!viewCheck(view)) { return; }
             var v = view.innerHTML;
-            if(v.length != 0 && Number(v) != 0 && v.indexOf(button.value) == -1) {
+            if(v.length != 0 && Number(v) != 0 && (v.indexOf('+') == -1 && v.indexOf('-') == -1 && v.indexOf('X') == -1 && v.indexOf('/') == -1 && v.indexOf('%') == -1)) {
                 view.innerHTML += button.value;
             }
         }
 
         dot.onclick = function() {
+            if (!viewCheck(view)) { return; }
             var v = view.innerHTML;
+            var o = '';
             if(v.length != 0 && v.indexOf(this.value) == -1) {
                 view.innerHTML += this.value;
-            } else if(v.indexOf('+') != -1 || v.indexOf('-') != -1 || v.indexOf('X') != -1 || v.indexOf('/') != -1 || v.indexOf('%') != -1) {
-                if(v.split('.').length - 1 == 1) {
-                    view.innerHTML += this.value;
+            } else if((o = v.indexOf('+')) != -1 || (o = v.indexOf('-')) != -1 || (o = v.indexOf('X')) != -1 || (o = v.indexOf('/')) != -1 || (o = v.indexOf('%')) != -1) {
+                var n = v.split(v[o]);
+                if(n.length - 1 == 1) {
+                    if(n[1].length != 0 && n[1].indexOf(this.value) == -1) {
+                        view.innerHTML += this.value;
+                    }
                 }
             }
         }
 
         res.onclick = function() {
+            if (!viewCheck(view)) { return; }
             var v = view.innerHTML;
             var num;
             var r = 0;
@@ -200,17 +194,40 @@
                  r = Number(num[0]) * Number(num[1]);
             } else if(v.indexOf('/') != -1) {
                  num = v.split('/');
-                 r = Number(num[0]) / Number(num[1]);
+                 if(num[1] != 0) {
+                    r = Number(num[0]) / Number(num[1]);
+                 } else {
+                     r = "연산불가";
+                 }
             } else if(v.indexOf('%') != -1) {
                  num = v.split('%');
-                 r = Number(num[0]) % Number(num[1]);
+                 if(num[1] != 0) {
+                    r = Number(num[0]) % Number(num[1]);
+                 } else {
+                     r = "연산불가";
+                 }
             }
 
             if(typeof(num) != "undefined") {
+                if(r = '연산불가') {
+                    view.style.backgroundColor = "red";
+                    view.style.color = "white";
+                }
+                
                 view.innerHTML = r;
             }
             
         }
+
+        function viewCheck(view) {
+            var v = view.innerHTML;
+            if (v == '연산불가') {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        
         
 
     </script>

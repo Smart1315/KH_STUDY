@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>북 카테고리 선택</title>
+<style>
+	.area{
+		border: 1px solid red; min-height: 100px;
+	}
+</style>
+</head>
+<body>
+	<h2>Practice1</h2>
+	<br>
+	
+	<form>
+		<fieldset>
+			<legend>취미</legend>
+			
+			<table>
+				<tr>
+					<td><input type="checkbox" name="hobby" value="all" id="all" onclick="checkAll();">전체선택</td>
+					<td><input type="checkbox" name="hobby" value="종합" id="종합" onclick="check();">종합</td>
+					<td><input type="checkbox" name="hobby" value="소설" id="소설" onclick="check();">소설</td>
+					<td><input type="checkbox" name="hobby" value="시/에세이" id="시" onclick="check();">시/에세이</td>
+					<td><input type="checkbox" name="hobby" value="경제/경영" id="경제" onclick="check();">경제/경영</td>
+					<td><input type="checkbox" name="hobby" value="자기계발" id="자기계발" onclick="check();">자기계발</td>
+					<td><input type="checkbox" name="hobby" value="아동" id="아동" onclick="check();">아동</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="checkbox" name="hobby" value="여행" id="여행" onclick="check();">여행</td>
+					<td><input type="checkbox" name="hobby" value="과학" id="과학" onclick="check();">과학</td>
+					<td><input type="checkbox" name="hobby" value="역사/문화" id="역사" onclick="check();">역사/문화</td>
+					<td><input type="checkbox" name="hobby" value="외국어" id="외국어" onclick="check();">외국어</td>
+					<td><input type="checkbox" name="hobby" value="컴퓨터" id="컴퓨터" onclick="check();">컴퓨터</td>
+					<td><input type="checkbox" name="hobby" value="만화" id="만화" onclick="check();">만화</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+
+	<br>
+
+	<button onclick="checkHobby();">카테고리 선택</button>
+	<div class="area" id="area"></div>
+
+	<script>
+		var checkbox = document.getElementsByName('hobby');
+		function checkAll() {
+			if(checkbox[0].checked) {
+				for(var i in checkbox) {
+					checkbox[i].checked = true;
+				}
+			} else {
+				for(var i in checkbox) {
+					checkbox[i].checked = false;
+				}
+			}
+
+		}
+		function check() {
+			var check = true;
+
+			for(var i = 1; i < checkbox.length; i++) {
+				if(!checkbox[i].checked) {
+					check = false;
+				}
+			}
+
+			if(check) {
+				checkbox[0].checked = true;
+			} else {
+				checkbox[0].checked = false;
+			}
+		}
+
+		function checkHobby() {
+			var area = document.getElementById("area");
+			var value = "";
+
+			for(var i = 1; i < checkbox.length; i++) {
+				if(checkbox[i].checked) {
+					value += checkbox[i].value + " ";
+				}
+			}
+
+			if(value == "") {
+				value = "선택된 취미 없음";
+			}
+			
+			area.innerHTML = value;
+		}
+		
+	</script>
+
+</body>
+</html>

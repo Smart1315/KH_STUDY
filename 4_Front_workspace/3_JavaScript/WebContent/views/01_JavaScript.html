@@ -205,14 +205,16 @@
 	 -->
 	 <script>
 		 function readValue() {
-			var userName = document.getElementById("userName").value;
+			var userName = document.getElementById("userName");
 			var area = document.getElementById("area3");
+			var value = userName.value;
 
-			if(userName.trim() != "") {
-				area.innerHTML = userName;
+			if(value.trim() != "") {
+				area.innerHTML = value;
 			} else {
 				area.innerHTML = "이름을 입력하세요";
-				document.getElementById("userName").value = null;
+				userName.value = null;
+				value.focus();
 			}
 
 		 }

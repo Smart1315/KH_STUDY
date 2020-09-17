@@ -5,7 +5,7 @@
 <title>BasicGrammar</title>
 <style>
 	.area{
-		border: 1px solid red; height: 100px;
+		border: 1px solid red; min-height: 100px;
 	}
 </style>
 </head>
@@ -61,5 +61,168 @@
 		}
 
 	</script>
+	
+	<h3>자료형</h3>
+	<p>자바스크립트에서는 자료형 별로 변수 타입이 지정되지 않고 리터럴에 의해 자료형 결정</p>
+	<button onclick="typeTest();">자료형 테스트</button>
+	<br><br>
+	<div id="area1" class="area"></div>
+	<script>
+		function typeTest() {
+			var name = '박신우'; // 문자열
+			var age = 20; // 숫자
+			var check = true; // 논리값
+			var hobby = ['노래', '춤', '게임']; // 배열
+			var user = {
+				name: "박신우",
+				age: 20,
+				id: "user01"
+			}; // 객체
+			var testFunction = function testFunction(num1, num2) {
+				var sum = num1 + num2;
+				alert(sum);
+			}; // 함수
+
+			var area = document.getElementById('area1'); // 변수없이 id로 바로 접근 가능하지만 아직 공식적인 방법은 아님
+			area.innerHTML += '문자열 : ' + name + '<br>';
+			area.innerHTML += '숫자 : ' + age + '<br>';
+			area.innerHTML += '논리 : ' + check + '<br>';
+			area.innerHTML += '배열 : ' + hobby + '<br>';
+			area.innerHTML += '객체 : ' + user + '<br>';
+			console.log(user);
+			console.log("객체 : " + user);
+			area.innerHTML += '함수 : ' + testFunction + '<br>';
+		}
+	</script>
+
+	<hr>
+
+	<h2>데이터 형변환</h2>
+	<h4>문자열과 숫자의 + 연산</h4>
+	<p>
+		문자열 + 숫자 = 문자열<br>
+		숫자 + 숫자 + 문자열 = 숫자가 번저 계산되고 뒤의 문자열과 합쳐짐
+	</p>
+	<button onclick="testPlus();">문자열과 숫자의 +연산</button>
+	<script>
+		function testPlus() {
+			var test1 = 7 + 7; // 14
+			var test2 = 7 + "7"; // 77
+			var test3 = "7" + 7; // 77
+			var test4 = "7" + "7"; // 77
+			var test5 = 7 + 7 +"7"; // 147
+			var test6 = 7 + "7" + 7; // 777
+			var test7 = "7" + 7 + 7; // 777
+			var test8 = "7" + (7 + 7); // 714
+
+			console.log(test1);
+			console.log(test2);
+			console.log(test3);
+			console.log(test4);
+			console.log(test5);
+			console.log(test6);
+			console.log(test7);
+			console.log(test8);
+		}
+	</script>
+
+	<h3>typeof() 연산자</h3>
+	<p>
+		값의 자료형을 확인하는 연산자<br>
+		선언 시 자료형을 지정하지 않기 때문에 변수 명만으로 데이터의 자료형을 확인할 수 없음<br>
+		변수의 자료형 확인시 자주 사용
+	</p>
+	<button onclick="typeofTest();">typeof() 확인</button>
+	<script>
+		function typeofTest() {
+			var name = '박신우';
+			var age = 20;
+			var check = true;
+			var hobby = ['축구', '농구', '야구'];
+			var member = {
+				memberId: 'user01',
+				memberPwd: 'pass01',
+				memberName: '강건강',
+				age: 25
+			};
+			var sumTwoNumber = function sumTwoNumber(num1, num2) {
+				var sum = num1, num2;
+				console.log(sum);
+			}
+			var temp;
+
+			console.log(typeof(name));
+			console.log(typeof(age));
+			console.log(typeof(check));
+			console.log(typeof(hobby));
+			console.log(typeof(member));
+			console.log(typeof(sumTwoNumber));
+			console.log(typeof(temp));
+		}
+	</script>
+
+	<h3>강제형변환</h3>
+	<p>Number(), parseInt(), parseFloat()함수를 이용하여 강제 형변환</p>
+	<button onclick="castingTest();">casting테스트</button>
+	<script>
+		function castingTest() {
+			var num1 = 2;
+			var num2 = '3';
+
+			console.log(num1 + num2);
+			console.log(num1 + Number(num2));
+			console.log(num1 + parseInt(num2));
+			console.log(num1 + parseFloat(num2));
+		}
+	</script>
+
+	<hr>
+
+	<h2>연산자</h2>
+	<h3>자바와 다른 연산자</h3>
+	<h4>===연산자와 !==연산자</h4>
+	<p>값과 자료형 둘 다 일치하는지, 일지하지 않는지 확인</p>
+	<button onclick="opTest();">확인하기</button>
+	<script>
+		function opTest() {
+			var check1 = 1;
+			var check2 = '1';
+
+			console.log('check1 == 1 : ' + (check1 == 1));
+			console.log('check1 == 1 : ' + (check1 == '1'));
+			console.log('check2 == 1 : ' + (check2 == 1));
+			console.log('check2 == 1 : ' + (check2 == '1'));
+
+			console.log('check1 === 1 : ' + (check1 === 1));
+			console.log('check1 === 1 : ' + (check1 === '1'));
+			console.log('check2 === 1 : ' + (check2 === 1));
+			console.log('check2 === 1 : ' + (check2 === '1'));
+
+			var str = "박신우";
+			console.log(str == '박신우');
+		}
+	</script>
+
+	<hr>
+
+	<h2>제어문</h2>
+	<h3>반복문</h3>
+	<h4>for in</h4>
+	<button onclick="forinTest();">for in버튼</button>
+	<script>
+		function forinTest() {
+			var result = "";
+			var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+			for(var i in array) {
+				console.log(i);
+				result += array[i] + " ";
+			}
+			
+			console.log(result);
+		}
+	</script>
+
+
 </body>
 </html>

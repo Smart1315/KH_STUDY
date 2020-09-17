@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<style>
+    div {
+        display: inline-block;
+        margin-left: 10px;
+    }
+</style>
+</head>
+<body>
+    <h2>Practice3</h2>
+     <br>
+     
+     <form>
+        <fieldset>
+            <legend>회원가입</legend>
+
+            아이디 : <input type="text" id="id" onkeyup="idCheck();"><div id="idCheck"></div><br><br>
+            비밀번호 : <input type="password" id="pw"><br><br>
+            비밀번호 확인 : <input type="password" id="checkPw" onblur="pwCheck();"><div id="pwCheck"></div><br><br>
+            이름 : <input type="text" id="name"><br><br>
+
+            <button type="button" onclick="signUp();">회원가입</button>
+        </fieldset>
+     </form>
+
+     <script>
+         var check1 = false;
+         var check2 = false;
+
+        function idCheck() {
+            var id = document.getElementById('id').value;
+            var checkId = document.getElementById('idCheck');
+
+            if(id.length < 5) {
+                checkId.style.color = "red";
+                checkId.innerHTML = "아이디는 5자 이상입니다.";
+                check1 = false;
+            } else if(id != 'user01') {
+                checkId.style.color = "green";
+                checkId.innerHTML = "사용가능한 아이디입니다.";
+                check1 = true;
+            } else {
+                checkId.style.color = "red";
+                checkId.innerHTML = "이미 존재하는 아이디입니다.";
+                check1 = false;
+            }
+        }
+
+        function pwCheck() {
+            var pw1 = document.getElementById('pw').value;
+            var pw2 = document.getElementById('checkPw').value;
+            var check = document.getElementById('pwCheck');
+
+            if(pw1 == pw2) {
+                check.style.color = "green";
+                check.innerHTML = "비밀번호가 일치합니다.";
+                check2 = true;
+            } else {
+                check.style.color = "red";
+                check.innerHTML = "비밀번호가 일치하지 않습니다.";
+                check2 = false;
+            }
+        }
+
+        function signUp() {
+            var id = document.getElementById('id');
+            var pw1 = document.getElementById('pw');
+            var pw2 = document.getElementById('checkPw');
+            var name = document.getElementById('name');
+
+            if(id.value == null) {
+                id.value = null;
+                alert('아이디를 입력해주세요');
+                id.focus();
+            } else if(!check1) {
+                id.value = null;
+                alert('사용할 수 없는 아이디입니다');
+                id.focus();
+            } else if(pw1.value == null && pw2.value == null) {
+                pw1.value = null;
+                pw2.value = null;
+                alert('비밀번호를 입력해주세요');
+                pw1.focus();
+            } else if(!check2) {
+                pw1.value = null;
+                pw2.value = null;
+                alert('비밀번호가 일치하지 않습니다');
+                pw1.focus();
+            } else if(name.value.trim().length == 0) {
+                name.value = null;
+                alert('이름을 입력해주세요');
+                name.focus();
+            } else {
+                alert(name.value + "님, 회원가입이 성공적으로 완료되었습니다^^");
+                id.value = null;
+                pw1.value = null;
+                pw2.value = null;
+                name.value = null;
+            }
+        }
+     </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>검색 항목</title>
+<style>
+    #title~input {
+        margin-left: 20px;
+    }
+    #view {
+        display: none;
+    }
+    #view fieldset {
+        background-color: lightgray;
+        border: 5px solid lightgray;
+    }
+    div[name=view] {
+        display: none;
+    }
+    #fTitle {
+        display: inline-block;
+        width: 90%;
+    }
+    #inTitle {
+        width: 98%;
+    }
+    button {
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+    <h2>Practice5</h2>
+    <br>
+
+    <form>
+        <fieldset style="text-align: center;">
+            <legend>검색할 항목을 선택하세요</legend>
+
+            <input type="radio" name="item" id="title" value="제목">제목
+            <input type="radio" name="item" id="date" value="날짜">날짜
+            <input type="radio" name="item" id="writer" value="작성자">작성자
+        </fieldset>
+    </form>
+    
+    <br>
+
+    <form id="view">
+        <fieldset>
+            <div id="vTitle"></div>
+
+            <div id="fTitle" name="view">
+                <input type="text" id="inTitle"> 
+            </div>
+            <div id="fDate" name="view">
+                <input type="date" id="inDate">
+                -
+                <input type="date">
+            </div>
+            <div id="fWriter" name="view">
+                <input type="text" id="inWriter">
+            </div>
+
+            <button type="button">검색</button>
+        </fieldset>
+    </form>
+
+    <script>
+        var item = document.getElementsByName('item');
+
+        for(var i in item) {
+            item[i].onclick = function() {
+                radioClick(this);
+            }
+        }
+
+        function radioClick(radio) {
+            var id = radio.id;
+            var title = document.getElementById("vTitle");
+            var view = document.getElementsByName('view');
+
+            document.getElementById('view').style.display = "inherit";
+            for(var i = 0; i < view.length; i++) {
+                view[i].style.display = "none";
+            }
+            if(id == 'title') {
+                title.innerHTML = "검색할 제목을 입력하세요 : ";
+                view[0].style.display = "inline-block";
+            } else if(id == 'date') {
+                title.innerHTML = "검색할 날짜를 입력하세요 : ";
+                view[1].style.display = "inline-block";
+            } else if(id == 'writer') {
+                title.innerHTML = "검색할 작성자 아이디를 입력하세요 : ";
+                view[2].style.display = "inline-block";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

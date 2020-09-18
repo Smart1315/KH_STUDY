@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구매 정보</title>
+<style>
+    div {
+        border: 1px solid black;
+        width: 400px; min-height: 150px;
+    }
+</style>
+</head>
+<body>
+    <h2>Practice4</h2>
+    <br>
+
+    <form>
+        <fieldset>
+            <legend>구매 정보</legend>
+
+            <ul>
+                <li>구매자 : 
+                    <input type="text" class="bInfo" id="name" name="이름" placeholder="구매자의 이름을 입력하세요">
+                </li>
+                <li>상품명 : 
+                    <input type="text" class="bInfo" id="product" name="상품명" placeholder="구매 상품 명을 입력하세요">
+                </li>
+                <li>가격 : 
+                    <input type="number" min="0" class="bInfo" id="price" name="가격" placeholder="구매 가격을 입력하세요">
+                </li>
+                <li>구매 수량 : 
+                    <input type="number" min="10" max="100" step="10" class="bInfo" id="pq" name="구매수량" placeholder="최소 10">
+                </li>
+                <li>납품 등급 : 
+                    <input type="range" min="1" max="9" step="2" class="bInfo" id="rate" value="1">
+                </li>
+                <li>기타 사항 : 
+                    <textarea class="bInfo" id="etc" cols="30" rows="5"></textarea>
+                </li>
+            </ul>
+        </fieldset>
+        <br>
+        <button type="button" onclick="resultInfo();">입력 값 출력하기</button>
+    </form>
+    <br>
+
+    <div id="result"></div>
+
+    <script>
+        function resultInfo() {
+            var info = document.getElementsByClassName('bInfo');
+            var result = document.getElementById('result');
+            var res = "";
+            var n = 0;
+            for(var i = 0; i < info.length - 1; i++) {
+                if(info[i].value == "") {
+                    res = info[i].name;
+                    n = i;
+                    break;
+                }
+            }
+
+            if(res == "") {
+                res += "구매자 명 : " + info.name.value + "님<br>";
+                res += "상품 명 : " + info.product.value + "<br>";
+                res += "가격 : " + info.price.value + "만원<br>";
+                res += "구매 수량 : " + info.pq.value + "개<br>";
+                res += "납품등급 : " + info.rate.value + "등급<br>";
+                res += "기타사항 : " + info.etc.innerText;
+                result.innerHTML = res;
+            } else {
+                alert(res + "을 입력해주세요");
+                info[i].focus();
+            }
+        }
+
+    </script>
+</body>
+</html>

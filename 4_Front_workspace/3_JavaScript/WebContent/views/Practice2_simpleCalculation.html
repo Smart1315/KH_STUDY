@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>간단 계산기</title>
+<title>간단 계산/진짜 계산기</title>
 <style>
     table div {
         width: 100%;
@@ -138,11 +138,11 @@
         }
 
         for(var i in numPad) {
-            numPad[i].onclick = function() { numClick(this) };
+            numPad[i].onclick = function() { numClick(this) }
         }
 
         for(var i in op) {
-            op[i].onclick = function() { opClick(this) };
+            op[i].onclick = function() { opClick(this) }
         }
 
         function numClick(button) {

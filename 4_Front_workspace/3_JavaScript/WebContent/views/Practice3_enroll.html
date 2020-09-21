@@ -23,7 +23,7 @@
             비밀번호 확인 : <input type="password" id="checkPw" onblur="pwCheck();"><div id="pwCheck"></div><br><br>
             이름 : <input type="text" id="name"><br><br>
 
-            <button type="button" onclick="signUp();">회원가입</button>
+            <button onclick="return signUp();">회원가입</button>
         </fieldset>
      </form>
 
@@ -98,14 +98,10 @@
                 name.focus();
             } else {
                 alert(name.value + "님, 회원가입이 성공적으로 완료되었습니다^^");
-                id.value = null;
-                pw1.value = null;
-                pw2.value = null;
-                name.value = null;
-                checkId.innerHTML = "";
-                checkPw.innerHTML = "";
+                return true;
                 
             }
+            return false;
         }
      </script>
 </body>

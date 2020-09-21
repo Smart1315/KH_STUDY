@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>RagularExpression</title>
+</head>
+<body>
+    <h1>정규 표현식</h1>
+    <h2>정규 표현식 객체 생성</h2>
+    <button onclick="test1();">확인하기</button>
+    <script>
+        function test1() {
+            // 정규식 변수 선언하기1 : new
+            // var regExp = new RegExp('script');
+            // var regExp = new RegExp(/script/);
+            
+            // 정규식 변수 선언하기2 : 스크립트 작성
+            var regExp = /script/;
+            // var regExp = 'script'; // 일반 String타입 변수생성, 정규표현식 변수X
+            
+            var str = 'javascript jquery ajax';
+
+            // test() : 해당 글자가 있으면 true, 없으면 false 반환
+            console.log('test() 이용 : ' + regExp.test(str));
+            // exec() : 해당 글자가 있으면 그 글자 반환, 없으면 null 반환
+            console.log('exec() 이용 : ' + regExp.exec(str));
+
+        }
+    </script>
+    
+    <h2>$&, $`, $'</h2>
+    <button onclick="test2();">실행확인</button>
+    <script>
+        function test2() {
+            var regExp = /as/;
+            var str = 'javascript jquery ajax sass';
+
+            // $& : 제일 처음 일치하는 문자열
+            console.log('$& : ' + str.replace(regExp, '($&)'));
+
+            // $` : 일치한 문자열의 앞 문자열
+            console.log('$& : ' + str.replace(regExp, '($`)'));
+            
+            // $' : 일치한 문자열의 뒷 문자열
+            console.log('$& : ' + str.replace(regExp, "($')"));
+        }
+    </script>
+
+    <h2>()소괄호와 |</h2>
+    <button onclick="test3();">실행확인</button>
+    <script>
+        function test3() {
+            var src = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'];
+            
+            // var regExp = /(금요일|토요일|일요일)/;
+            var regExp = /(금|토|일)요일/;
+            for(var i = 0; i < src.length; i++) {
+                console.log(src[i] + " : " + regExp.test(src[i]));
+            }
+        }
+    </script>
+
+    <h2>플래그 문자</h2>
+    <button onclick="test4();">실행확인</button>
+    <script>
+        function test4() {
+            var regExp0 = /a/;
+            var regExp1 = /a/g;
+            var regExp2 = /a/i;
+            var regExp3 = /a/gi;
+
+            var str = 'JAvaScript JQuery Ajax\nJAvaScript JQuery Ajax';
+
+            // g : 전역 비교
+            // i : 대소문자 구분 없이 비교
+            console.log(regExp0 + " : " + str.replace(regExp0, '($&)'));
+            console.log(regExp1 + " : " + str.replace(regExp1, '($&)'));
+            console.log(regExp2 + " : " + str.replace(regExp2, '($&)'));
+            console.log(regExp3 + " : " + str.replace(regExp3, '($&)'));
+
+        }
+    </script>
+
+    <h2>앵커문자</h2>
+    <button onclick="test5();">실행확인</button>
+    <script>
+        function test5() {
+            // ^ : 문자열의 앞
+            var regExp = /^j/gi;
+            var regExp2 = /^j/gim; // m 플래그문자 : 여러 줄 검사
+            var str = "JavaScript\nJQuery\nAjax";
+
+            console.log(regExp + " : " + str.replace(regExp, '($&)'));
+            console.log(regExp2 + " : " + str.replace(regExp2, '($&)'));
+
+            // $ : 문자열의 뒤
+            var str2 = "JavaScript\nJQuery\nShellScript\nAjax";
+            var regExp3 = /ipt$/gi;
+            var regExp4 = /ipt$/gim;
+
+            console.log(regExp3 + " : " + str2.replace(regExp3, '($&)'));
+            console.log(regExp4 + " : " + str2.replace(regExp4, '($&)'));
+        }
+    </script>
+
+    <h2>수량 문자</h2>
+    <button onclick="test6();">실행확인</button>
+    <script>
+        function test6() {
+            var src = 'aabc abc bc';
+
+            // a* : a가 0개 이상
+            var regExp1 = /a*b/g; // a*b : a가 0개 이상이면서 뒤에 b가 있는
+            // a+ : a가 1개 이상
+            var regExp2 = /a+b/g; // a+b : a가 1개 이상이면서 뒤에 b가 있는
+            // a? : a가 0개 또느 1개
+            var regExp3 = /a?b/g; // a?b : a가 0개 또는 1개면서 뒤에 b가 있는
+
+            console.log(regExp1 + " : " + src.replace(regExp1, '($&)'));
+            console.log(regExp2 + " : " + src.replace(regExp2, '($&)'));
+            console.log(regExp3 + " : " + src.replace(regExp3, '($&)'));
+        }
+    </script>
+
+</body>
+</html>

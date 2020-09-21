@@ -71,6 +71,8 @@
             var pw1 = document.getElementById('pw');
             var pw2 = document.getElementById('checkPw');
             var name = document.getElementById('name');
+            var checkId = document.getElementById('idCheck');
+            var checkPw = document.getElementById('pwCheck');
 
             if(id.value == null) {
                 id.value = null;
@@ -100,6 +102,9 @@
                 pw1.value = null;
                 pw2.value = null;
                 name.value = null;
+                checkId.innerHTML = "";
+                checkPw.innerHTML = "";
+                
             }
         }
      </script>

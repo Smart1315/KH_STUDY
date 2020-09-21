@@ -209,11 +209,10 @@
             }
 
             if(typeof(num) != "undefined") {
-                if(r = '연산불가') {
+                if(r == '연산불가') {
                     view.style.backgroundColor = "red";
                     view.style.color = "white";
                 }
-                
                 view.innerHTML = r;
             }
             

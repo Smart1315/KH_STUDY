@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>event</title>
+<script src="../js/jquery-3.5.1.min.js"></script>
+<style>
+    .test {
+        width: 150px; height: 50px;
+        border: 1px solid black;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .outer {
+        width: 100px; height: 50px;
+        background: powderblue;
+        padding: 30px;
+    }
+
+    .inner {
+        width: 100%; height: 100%;
+        background: white;
+    }
+
+    .reverse {
+        background: black; color: white;
+    }
+</style>
+</head>
+<body>
+    <h1>이벤트</h1>
+    <h2>이벤트 관련 속성</h2>
+    <p>
+        이벤트 핸들러의 매개 인자로 event객체 전달
+        인라인에서 다른 키워드 사용 불가
+    </p>
+    <button onclick="test1(event)">실행확인</button>
+    <!-- <button onclick="test(e);">실행확인</button> -->
+    <script>
+        function test1(e) {
+            console.log(e);
+        }
+    </script>
+
+    <h2>이벤트 연결 종류</h2>
+    <h3>on()과 off()메소드</h3>
+    <p>
+        on() : 현재 존재하는 문서 객체에만 이벤트 연결<br>
+        off() : on()으로 연결된 이벤트 제거<br>
+    </p>
+    <div id="onOff" class="test">기본상태</div>
+    <script>
+        $(function() {
+            // #onOff에 마우스가 올라가면 '마우스 올라감'이라고 글자가 바뀌고 배경이 베이지로 변경
+            // 마우스가 벗어나면 '마우스 내려감'이라고 글자가 바뀌고 배경이 powderblue로 변경
+            // 클릭되면 마우스가 올라갔을 때의 이벤트, 벗어났을 때의 이벤트 삭제 후 '기본상태' 변경
+            $('#onOff').on('click', function() {
+                console.log($(this).text());
+            });
+
+            $('#onOff').on({'mouseenter': function() {
+                $(this).text('마우스 올라감').css('background', 'beige');
+            }, 'mouseleave': function() {
+                $(this).text('마우스 내려감').css('background', 'powderblue');
+            }, 'click': function() {
+                $(this).off('mouseenter').off('mouseleave').removeAttr('style').text('기본상태');
+            }});
+        });
+    </script>
+
+    <h3>one()</h3>
+    <p>이벤트를 한 번만 연결할 때 사용</p>
+    <div id="eventOne" class="test">기본 상태</div>
+    <script>
+        $(function() {
+            $('#eventOne').css('cursor', 'pointer')
+                          .one('click', function() {
+                              $(this).removeAttr('style');
+                              alert('처음이자 마지막 이벤트 발생');
+                          });
+        });
+    </script>
+
+</body>
+</html>

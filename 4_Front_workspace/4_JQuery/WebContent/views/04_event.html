@@ -83,5 +83,135 @@
         });
     </script>
 
+    <h2>이벤트 종류</h2>
+    <h3>마우스 이벤트</h3>
+    <h4>mouseover/mouseout(), mouseenter/mouseleave()</h4>
+    <div class="outer" id="mouseEvent1">
+        <div class="inner"></div>
+    </div>
+    <br>
+    <div class="outer" id="mouseEvent2">
+        <div class="inner"></div>
+    </div>
+    <script>
+        // 자식 요소 접근 시에도 이벤트 발생
+        $('#mouseEvent1').mouseover(function() {
+            console.log($(this).attr('id') + ' over!');
+        });
+        $('#mouseEvent1').mouseout(function() {
+            console.log($(this).attr('id') + ' out!');
+        });
+
+        // 자식 요소 접근 시 이벤트 발생하지 않음
+        $('#mouseEvent2').mouseenter(function() {
+            console.log($(this).attr('id') + ' enter!');
+        });
+        $('#mouseEvent2').mouseleave(function() {
+            console.log($(this).attr('id') + ' leave!');
+        });
+    </script>
+
+    <h4>hover()</h4>
+    <p>mouseenter()와 mouseleave()를 동시에 사용하는 효과</p>
+    <div id="hoverEvent" class="test">기본 상태</div>
+    <script>
+        $(function() {
+            // id=hoverEvent에 마우스가 올라가면 배경은 검은색, 글자는 흰색 변경
+            // 마우스가 내려가면 배경은 하얀색, 글자는 검정색 변경
+            // 1) 따로 연결하기
+            // $('#hoverEvent').mouseenter(function() {
+            //     $(this).css({'background' : 'black', 'color' : 'white'});
+            // });
+            // $('#hoverEvent').mouseleave(function() {
+            //     $(this).css({'background' : 'white', 'color' : 'black'});
+            // });
+
+            // 2) 메소드 체이닝으로 연결하기
+            // $('#hoverEvent').mouseenter(function() {
+            //     $(this).css({'background' : 'black', 'color' : 'white'});
+            // }).mouseleave(function() {
+            //     $(this).css({'background' : 'white', 'color' : 'black'});
+            // });;
+
+            // 3) on으로 연결하기
+            // $('#hoverEvent').on({'mouseenter' : function() {
+            //     $(this).css({'background' : 'black', 'color' : 'white'});
+            // }, 'mouseleave' : function() {
+            //     $(this).css({'background' : 'white', 'color' : 'black'});
+            // }});
+
+            // 4) hover()
+            $('#hoverEvent').hover(function() {
+                // $(this).css({'background' : 'black', 'color' : 'white'});
+                // $(this).addClass('reverse');
+                $(this).toggleClass('reverse');
+            }, function() {
+                // $(this).css({'background' : 'white', 'color' : 'black'});
+                // $(this).removeClass('reverse');
+                $(this).toggleClass('reverse');
+            });
+        });
+    </script>
+
+    <h3>키보드 이벤트</h3>
+    <h4>keydown(), keypress(), keyup()</h4>
+    <textarea id="keyEvent" cols="40" rows="5"></textarea>
+    <script>
+        $(function() {
+            $('#keyEvent').keydown(function(e) { // 키보드 누르고 있을 때
+                console.log('keydown : ' + e.key);
+            });
+
+            $('#keyEvent').keypress(function(e) { // 글자가 입력될 때
+                console.log('keypress : ' + e.key);
+            });
+
+            $('#keyEvent').keyup(function(e) { // 키보드 때질 때
+                console.log('keyup : ' + e.key);
+            });
+        });
+    </script>
+
+    <h4>동적으로 글자 수 세기</h4>
+    <span id="counter">0</span>/150<br>
+    <textarea id="textTest" cols="70" rows="5"></textarea>
+    <script>
+        $(function() {
+            $('#textTest').keyup(function(e) {
+                var counter = $('#counter');
+                var count = $(this).val().length;
+
+                counter.text(count);
+
+                if(count <= 150) {
+                    counter.removeAttr('style');
+                } else {
+                    counter.css('color', 'red');
+                }
+                
+            });
+        });
+    </script>
+
+    <br>
+
+    <span id="counter2">0</span>/150<br>
+    <textarea id="textTest2" cols="70" rows="5"></textarea>
+    <script>
+        $(function () {
+            $('#textTest2').keyup(function (e) {
+                var counter = $('#counter2');
+                var c = $(this).val();
+                var count = c.length;
+
+                if (count <= 150) {
+                    counter.text(count);
+                } else {
+                    $(this).val(c.substring(0, 150));
+                }
+
+            });
+        });
+    </script>
 </body>
 </html>

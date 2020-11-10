@@ -73,7 +73,7 @@
                   <% } else { %>
                      <% for(Report r : report) { %>
                   <tr>
-                     <td class="report-check"><input type="checkbox" name="chk_id" value="<%= r.getMemberId() %>" onclick="selectOne();"></td>
+                     <td class="report-check"><input type="checkbox" name="chk_id" value="<%= r.getMemberId2() %>" onclick="selectOne();"></td>
                      <td><%= r.getReportNum() %></td>
                      <td><%= r.getMemberId() %></td>
                      <td><%= r.getMemberId2() %></td>

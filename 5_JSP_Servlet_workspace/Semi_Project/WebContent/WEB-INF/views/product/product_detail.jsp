@@ -211,8 +211,8 @@
                   </form>
                   <% } else { %>
                       <form method="post" name="reportComment<%= c.getCommentNum() %>" id="reportComment<%= c.getCommentNum() %>">
-                  		<input type="hidden" name="writer" value="<%= p.getNickname() %>">
-                 		<input type="hidden" name="writerId" value="<%= p.getProductWriter() %>">
+                  		<input type="hidden" name="writer" value="<%= c.getMemberName() %>">
+                 		<input type="hidden" name="writerId" value="<%= c.getMemberId() %>">
                  		<input type="hidden" name="cNum" value="<%= c.getCommentNum() %>">
                      <a href="javascript:void(0);" onclick="reportSendForm('reportComment<%= c.getCommentNum() %>', '댓글 신고');"class="reportComment" style="width: 30px; right: 12px; top: 20px;">신고</a>
                      <% } %>

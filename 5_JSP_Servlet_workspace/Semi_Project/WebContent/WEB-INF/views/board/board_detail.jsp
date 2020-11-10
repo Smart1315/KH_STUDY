@@ -133,8 +133,8 @@
 						</form>
 						<% } else if(loginMember != null && !loginMember.getId().equals(c.getMemberId())) { %>
 							<form method="post" name="reportComment<%= c.getCommentNum() %>" id="reportComment<%= c.getCommentNum() %>">
-                  				<input type="hidden" name="writer" value="<%= b.getNickName() %>">
-                 				<input type="hidden" name="writerId" value="<%= b.getBoardWriter() %>">
+                  				<input type="hidden" name="writer" value="<%= c.getMemberName() %>">
+                 				<input type="hidden" name="writerId" value="<%= c.getMemberId() %>">
                  				<input type="hidden" name="cNum" value="<%= c.getCommentNum() %>">
 								<a href="javascript:void(0);" onclick="reportSendForm('reportComment<%= c.getCommentNum() %>', '댓글 신고');" class="reportComment" style="width: 30px; right: 3px; top: 20px;">신고</a>
 							</form>

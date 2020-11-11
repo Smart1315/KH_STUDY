@@ -245,6 +245,8 @@
                            }
                         
                         function selectOne(){
+                        	var all = document.getElementById()
+                        	var chk_id = document.getElementsByName('chk_id');
                                  var count = 0;
                                  
                                  for(var i = 0; i < chk_id.length; i++){

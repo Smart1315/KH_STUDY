@@ -35,7 +35,6 @@ public class ReportDeleteServlet extends HttpServlet {
 		int result = new AdminService().reportdelete(checkId);
 		
 		String page = "managerreport.do";
-		
 		if(!(result > 0)) {
 			request.setAttribute("msg", "회원 제명에 실패하였습니다.");
 			request.setAttribute("path", page);
@@ -48,7 +47,6 @@ public class ReportDeleteServlet extends HttpServlet {
 			}
 			response.sendRedirect(page);
 		}
-		request.getRequestDispatcher(page).forward(request, response);
 	}
 
 	/**

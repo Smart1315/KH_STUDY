@@ -248,13 +248,15 @@ public class SellshareController {
 	}
 	
 	@RequestMapping("sellDetail.ss")
-	public String sellDetail(@CookieValue(name = "sellView") String cookie, HttpServletRequest request, HttpServletResponse response, @RequestParam("ssNum") int ssNum, Model model) {
+	public String sellDetail(@CookieValue(name = "sellView", required = false) String cookie, HttpServletRequest request, HttpServletResponse response, @RequestParam("ssNum") int ssNum, Model model) {
 		
-		if (!(cookie.contains(String.valueOf(ssNum)))) {
-			cookie += ssNum + "/";
-			ssService.updateScount(ssNum);
+		if(cookie != null) {
+			if (!(cookie.contains(String.valueOf(ssNum)))) {
+				cookie += ssNum + "/";
+				ssService.updateScount(ssNum);
+			}
+			response.addCookie(new Cookie("sellView", cookie));
 		}
-		response.addCookie(new Cookie("sellView", cookie));
 		
 		Sellshare ss = ssService.selectSellshare(ssNum);
 		ArrayList<SComment> cList = (ArrayList<SComment>)ssService.selectSComment(ssNum);

@@ -103,13 +103,15 @@ public class BoardController {
 	}
 	
 	@RequestMapping("boardDetail.bo")
-	public String boardDetail(@CookieValue(name = "view") String cookie, HttpServletRequest request, HttpServletResponse response, @RequestParam("bNum") int bNum, Model model) {
-   
-		if (!(cookie.contains(String.valueOf(bNum)))) {
-			cookie += bNum + "/";
-			bService.updateBcount(bNum);
+	public String boardDetail(@CookieValue(name = "view", required = false) String cookie, HttpServletRequest request, HttpServletResponse response, @RequestParam("bNum") int bNum, Model model) {
+
+		if(cookie != null) {
+			if (!(cookie.contains(String.valueOf(bNum)))) {
+				cookie += bNum + "/";
+				bService.updateBcount(bNum);
+			}
+			response.addCookie(new Cookie("view", cookie));
 		}
-		response.addCookie(new Cookie("view", cookie));
 
 		Board b = bService.selectBoard(bNum);
 		ArrayList<Comment> cList = (ArrayList<Comment>)bService.selectComment(bNum);

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="G_ImageViewer" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <ImageViewer id="ImageViewer00" taborder="0" text="ImageViewer00" left="37" top="38" width="338" height="282" onclick="ImageViewer00_onclick" image="url('imagerc::image/river2.PNG')" stretch="fixaspectratio"/>
+        <ImageViewer id="ImageViewer01" taborder="1" text="ImageViewer01" left="411" top="44" width="346" height="275" image="url('imagerc::image/river1.PNG')" stretch="fixaspectratio"/>
+        <Button id="Button00" taborder="2" text="풍경1" left="411" top="340" width="60" height="40" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="3" text="풍경2" left="554" top="340" width="60" height="40" onclick="Button01_onclick"/>
+        <Button id="Button02" taborder="4" text="풍경3" left="697" top="340" width="60" height="40" onclick="Button02_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ImageViewer01.set_image("imagerc::image/city1.PNG");
+	this.ImageViewer01.set_stretch("fixaspectratio");
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ImageViewer01.set_image("imagerc::image/river1.PNG");
+	this.ImageViewer01.set_stretch("fixaspectratio");
+};
+
+this.Button02_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ImageViewer01.set_image("imagerc::image/river2.PNG");
+	this.ImageViewer01.set_stretch("fixaspectratio");
+};
+]]></Script>
+  </Form>
+</FDL>

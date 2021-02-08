@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppVariables version="2.0">
+  <Datasets>
+    <Dataset id="menu_Dataset">
+      <ColumnInfo>
+        <Column id="m_id" type="STRING" size="256"/>
+        <Column id="m_name" type="STRING" size="256"/>
+        <Column id="m_level" type="STRING" size="256"/>
+        <Column id="m_url" type="STRING" size="256"/>
+      </ColumnInfo>
+      <Rows>
+        <Row>
+          <Col id="m_id">1</Col>
+          <Col id="m_name">메뉴1</Col>
+          <Col id="m_level">0</Col>
+        </Row>
+        <Row>
+          <Col id="m_id">2</Col>
+          <Col id="m_name">연습1</Col>
+          <Col id="m_url">Work::Practice.xfdl</Col>
+          <Col id="m_level">1</Col>
+        </Row>
+        <Row>
+          <Col id="m_id">3</Col>
+          <Col id="m_name">메뉴2</Col>
+          <Col id="m_level">0</Col>
+        </Row>
+        <Row>
+          <Col id="m_name">폼1</Col>
+          <Col id="m_id">4</Col>
+          <Col id="m_url">Work::A_Test.xfdl</Col>
+          <Col id="m_level">1</Col>
+        </Row>
+        <Row>
+          <Col id="m_name">폼2</Col>
+          <Col id="m_id">5</Col>
+          <Col id="m_url">Work::B_Static.xfdl</Col>
+          <Col id="m_level">1</Col>
+        </Row>
+      </Rows>
+    </Dataset>
+  </Datasets>
+  <Variables/>
+</AppVariables>

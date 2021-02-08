@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <GenInfo version="1.1">
+    <Rule>
+      <ENV rule_version="1.05"/>
+      <ADL rule_version="1.14"/>
+      <FDL rule_version="1.04"/>
+      <XCSS rule_version="1.04"/>
+      <Script rule_version="1.02"/>
+    </Rule>
+    <Info project="C:\Users\AYJ\KH\7_Nexacro_workspace\nexacro_Example\" generated="C:\Users\AYJ\내 문서\nexacro\17.1\outputs\nexacro_Example\"><File url="environment.xml" checksum="20201127154337" errormsg=""/><File url="typedefinition.xml" checksum="20201127154338" errormsg=""/><File url="appvariables.xml" checksum="20201127154856" errormsg=""/><File url="_resource_\_theme_\default\theme.xcss" checksum="20201127154338" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\framework\Framework.json" checksum="20200128141820" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\resources\Resource.json" checksum="20200128141820" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\CompBase.json" checksum="20200128141818" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ComComp.json" checksum="20200128141818" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\Grid.json" checksum="20200128141818" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ListView.json" checksum="20200128141820" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\DeviceAPI.json" checksum="20200128141818" errormsg=""/><File url="Example.xadl" checksum="20201127161637" errormsg=""/><File url="FrameBase\Form_Top.xfdl" checksum="20201127155648" errormsg=""/><File url="FrameBase\Form_Left.xfdl" checksum="20201127163605" errormsg=""/><File url="FrameBase\Form_Work.xfdl" checksum="20201203154251" errormsg=""/><File url="_resource_\_xcss_\Example_css.xcss" checksum="20201203152134" errormsg=""/></Info>
+  </GenInfo>
+</root>

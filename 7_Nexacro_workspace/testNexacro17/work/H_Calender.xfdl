@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="H_Calender" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Calendar id="Calendar00" taborder="0" left="25" top="32" width="285" height="208" type="monthonly" usetrailingday="true"/>
+        <Calendar id="Calendar01" taborder="1" left="378" top="32" width="285" height="42" dateformat="yyyy" editformat="yyyy"/>
+        <Calendar id="Calendar02" taborder="2" left="378" top="110" width="282" height="51" type="spin"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="I_Dataset" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="143" top="37" width="167" height="103" binddataset="Dataset00">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="57"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="name"/>
+                <Cell col="1" text="age"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:name"/>
+                <Cell col="1" text="bind:age"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="name" type="STRING" size="256"/>
+          <Column id="age" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="name">강건강</Col>
+            <Col id="age">28</Col>
+          </Row>
+          <Row>
+            <Col id="name">남나눔</Col>
+            <Col id="age">14</Col>
+          </Row>
+          <Row>
+            <Col id="name">도대담</Col>
+            <Col id="age">53</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

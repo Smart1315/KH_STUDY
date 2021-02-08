@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="F_CheckBox_Radio_Combo" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <CheckBox id="CheckBox00" taborder="0" text="축구" left="24" top="29" width="96" height="42" onclick="CheckBoxes_onclick"/>
+        <CheckBox id="CheckBox01" taborder="1" text="야구" left="24" top="86" width="96" height="54" onclick="CheckBoxes_onclick"/>
+        <CheckBox id="CheckBox02" taborder="2" text="농구" left="24" top="150" width="86" height="74" onclick="CheckBoxes_onclick"/>
+        <Radio id="Radio00" taborder="3" left="183" top="25" width="177" height="51" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="Radio00_onitemchanged">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">Man</Col>
+                <Col id="datacolumn">남자</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">Woman</Col>
+                <Col id="datacolumn">여자</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Combo id="Combo00" taborder="4" text="" left="177" top="100" width="188" height="80" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="Combo00_onitemchanged">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">orange</Col>
+                <Col id="datacolumn">오렌지</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">grape</Col>
+                <Col id="datacolumn">포도</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">peach</Col>
+                <Col id="datacolumn">복숭아</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">apple</Col>
+                <Col id="datacolumn">사과</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">melon</Col>
+                <Col id="datacolumn">멜론</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.CheckBoxes_onclick = function(obj:nexacro.CheckBox,e:nexacro.ClickEventInfo)
+{
+	var isCheck = obj.value;
+	var name = obj.text;
+	
+	// 체크가 되면 체크한 요소의 이름을 아래에 출력
+	if(isCheck) {
+		nexacro.getApplication().trace(name);
+	}
+};
+
+this.Radio00_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	nexacro.getApplication().trace(obj.text);
+};
+
+this.Combo00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	nexacro.getApplication().trace(obj.text);
+};
+]]></Script>
+  </Form>
+</FDL>

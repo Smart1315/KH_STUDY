@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Practice" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <ImageViewer id="ImageViewer00" taborder="0" text="" left="30" top="26" width="232" height="176" stretch="fixaspectratio"/>
+        <Combo id="Combo00" taborder="1" text="Combo00" left="281" top="36" width="227" height="59" innerdataset="Dataset00" codecolumn="url" datacolumn="name" onitemchanged="Combo00_onitemchanged"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="name" type="STRING" size="256"/>
+          <Column id="url" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="name">꽃1</Col>
+            <Col id="url">image/flower1.PNG</Col>
+          </Row>
+          <Row>
+            <Col id="name">꽃2</Col>
+            <Col id="url">image/flower2.PNG</Col>
+          </Row>
+          <Row>
+            <Col id="name">꽃3</Col>
+            <Col id="url">image/flower3.PNG</Col>
+          </Row>
+          <Row>
+            <Col id="name">꽃4</Col>
+            <Col id="url">image/flower4.PNG</Col>
+          </Row>
+          <Row>
+            <Col id="name">꽃5</Col>
+            <Col id="url">image/flower5.PNG</Col>
+          </Row>
+          <Row>
+            <Col id="name">강1</Col>
+            <Col id="url">image/river1.PNG</Col>
+          </Row>
+          <Row>
+            <Col id="name">강2</Col>
+            <Col id="url">image/river2.PNG</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Combo00_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.ImageViewer00.set_image("imagerc::" + obj.value);
+};
+]]></Script>
+  </Form>
+</FDL>

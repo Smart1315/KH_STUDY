@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ADL version="2.0">
+  <Application id="App_MDI" screenid="screen00">
+    <Layout>
+      <MainFrame id="mainframe" showtitlebar="true" showstatusbar="true" width="800" height="800" titletext="TopLeftFrame">
+        <VFrameSet id="VFrameSet00" separatesize="100,*">
+          <Frames>
+            <ChildFrame id="TopFrame" showtitlebar="false" showstatusbar="false" formurl="FrameBase::Form_Top.xfdl"/>
+            <HFrameSet id="HFrameSet00" separatesize="200,*">
+              <Frames>
+                <ChildFrame id="LeftFrame" showtitlebar="false" showstatusbar="false" formurl="FrameBase::Form_Left.xfdl"/>
+                <ChildFrame id="WorkFrame" showtitlebar="false" showstatusbar="false" formurl="FrameBase::Form_Work.xfdl"/>
+              </Frames>
+            </HFrameSet>
+          </Frames>
+        </VFrameSet>
+      </MainFrame>
+    </Layout>
+  </Application>
+  <Script type="xscript5.1"><![CDATA[var objApp = nexacro.getApplication();
+
+this.gfn_open = function(sid, surl) {
+	var parentFrame = objApp.mainframe.VFrameSet00.HFrameSet00.WorkFrame;
+	
+	parentFrame.set_formurl(surl);
+};
+]]></Script>
+</ADL>

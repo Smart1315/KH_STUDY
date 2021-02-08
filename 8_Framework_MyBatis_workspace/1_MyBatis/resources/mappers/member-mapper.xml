@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="memberMapper">
+
+	<!-- 1. select 구문 : Member VO 필드와 ResultSet의 컬럼명이 일치하지 않는 것들은 자동 매칭이 되지 않음 -->	
+	<!-- <select id="loginMember" parameterType="member.model.vo.Member" resultType="member.model.vo.Member">
+		SELECT * 
+		FROM MEMBER 
+		WHERE USER_ID = #{userId}
+			  AND USER_PWD = #{userPwd}
+			  AND M_STATUS = 'Y'
+	</select> -->
+	
+	<!-- 2. resultMap 이용 : VO필드와 ReesultSet의 컬럼명을 연결시켜주는 구문 -->
+	<resultMap type="member.model.vo.Member" id="memberResultSet">
+		<id property="userId" column="USER_ID"/>
+		<result property="userPwd" column="USER_PWD"/>
+		<result property="userName" column="USER_NAME"/>
+		<result property="nickName" column="NICKNAME"/>
+		<result property="email" column="EMAIL"/>
+		<result property="birthDay" column="BIRTHDAY"/>
+		<result property="gender" column="GENDER"/>
+		<result property="phone" column="PHONE"/>
+		<result property="address" column="ADDRESS"/>
+		<result property="enrollDate" column="ENROLL_DATE"/>
+		<result property="updateDate" column="UPDATE_DATE"/>
+		<result property="mStatus" column="M_STATUS"/>
+	</resultMap>
+	
+	<select id="loginMember" parameterType="member.model.vo.Member" resultMap="memberResultSet">
+		SELECT * 
+		FROM MEMBER 
+		WHERE USER_ID = #{userId}
+			  AND USER_PWD = #{userPwd}
+			  AND M_STATUS = 'Y'
+	</select>
+	
+	<insert id="insertMember" parameterType="Member">
+		INSERT INTO MEMBER VALUES(#{userId}, 
+								  #{userPwd}, 
+								  #{userName}, 
+								  #{nickName}, 
+								  #{email}, 
+								  #{birthDay}, 
+								  #{gender}, 
+								  #{phone}, 
+								  #{address}, 
+								  SYSDATE, 
+								  SYSDATE, 
+								  DEFAULT)
+	</insert>
+	
+	<update id="updateMemberPwd" parameterType="hashmap">
+		UPDATE MEMBER SET USER_PWD = #{newPwd} 
+		WHERE USER_ID = #{userId} AND USER_PWD = #{userPwd}
+	</update>
+	
+	<update id="updateMember" parameterType="Member">
+		UPDATE MEMBER SET USER_NAME = #{userName}, 
+						  NICKNAME = #{nickName}, 
+						  EMAIL = #{email}, 
+						  BIRTHDAY = #{birthDay}, 
+						  GENDER = #{gender}, 
+						  PHONE = #{phone}, 
+						  ADDRESS = #{address},
+						  UPDATE_DATE = SYSDATE
+		WHERE USER_ID = #{userId}
+	</update>
+	
+	<delete id="deleteMember" parameterType="string">
+		UPDATE MEMBER SET M_STATUS = 'N'
+		WHERE USER_ID = #{userId}
+	</delete>
+	
+</mapper>

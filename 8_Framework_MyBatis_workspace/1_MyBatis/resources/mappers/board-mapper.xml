@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="boardMapper">
+
+	<select id="listCount" resultType="_int">
+		SELECT COUNT(*)
+		FROM BOARD
+		WHERE B_STATUS = 'Y'
+	</select>
+	
+	<select id="selectBoardList" resultMap="boardResultSet">
+	<!-- board.model.vo.Board : 별칭 등록 : Board -->
+	<!-- resultMap 생성 : BoardResultSet -->
+		SELECT *
+		FROM BOARD
+			 JOIN MEMBER ON(BWRITER= USER_ID)
+		WHERE B_STATUS = 'Y'
+		ORDER BY BID DESC
+	</select>
+	
+	<resultMap type="Board" id="boardResultSet">
+		<id property="bId" column="BID"/>
+		<result property="bType" column="BTYPE"/>
+		<result property="bTitle" column="BTITLE"/>
+		<result property="bContent" column="BCONTENT"/>
+		<result property="bWriter" column="BWRITER"/>
+		<result property="nickName" column="NICKNAME"/>
+		<result property="bCount" column="BCOUNT"/>
+		<result property="bCreateDate" column="B_CREATE_DATE"/>
+		<result property="bModifyDate" column="B_MODIFY_DATE"/>
+		<result property="bStatus" column="B_STATUS"/>
+	</resultMap>
+	
+	<update id="updateBoardCount" parameterType="_int">
+		UPDATE BOARD SET BCOUNT = BCOUNT + 1
+		WHERE BID = #{bId}
+	</update>
+	
+	<select id="selectBoardDetail" parameterType="_int" resultMap="boardResultSet2">
+		SELECT BID, BTITLE, BTYPE, BCONTENT, BWRITER, M.NICKNAME B_NICKNAME, BCOUNT, B_CREATE_DATE, B_MODIFY_DATE, B_STATUS,
+       		   RID, RCONTENT, REF_BID, RWRITER, M2.NICKNAME R_NICKNAME, R_CREATE_DATE, R_MODIFY_DATE, R_STATUS
+		FROM BOARD
+        JOIN MEMBER M ON(M.USER_ID = BWRITER)
+        LEFT JOIN REPLY ON(REF_BID = BID)
+        LEFT JOIN MEMBER M2 ON(M2.USER_ID = RWRITER)
+		WHERE BID = #{bId} 
+			  AND (R_STATUS = 'Y' OR R_STATUS IS NULL)
+		ORDER BY RID DESC
+	</select>
+	
+	<resultMap type="Reply" id="replyResultSet">
+		<id property="rId" column="RID"/>
+		<result property="rContent" column="RCONTENT"/>
+		<result property="refBid" column="REF_BID"/>
+		<result property="rWriter" column="RWRITER"/>
+		<result property="nickName" column="R_NICKNAME"/>
+		<result property="rCreateDate" column="R_CREATE_DATE"/>
+		<result property="rModifyDate" column="R_MODIFY_DATE"/>
+		<result property="rStatus" column="R_STATUS"/>
+	</resultMap>
+	
+	<resultMap type="Board" id="boardResultSet2">
+		<id property="bId" column="BID"/>
+		<result property="bType" column="BTYPE"/>
+		<result property="bTitle" column="BTITLE"/>
+		<result property="bContent" column="BCONTENT"/>
+		<result property="bWriter" column="BWRITER"/>
+		<result property="nickName" column="B_NICKNAME"/>
+		<result property="bCount" column="BCOUNT"/>
+		<result property="bCreateDate" column="B_CREATE_DATE"/>
+		<result property="bModifyDate" column="B_MODIFY_DATE"/>
+		<result property="bStatus" column="B_STATUS"/>
+		
+		<collection property="replyList" javaType="java.util.ArrayList" resultMap="replyResultSet" ofType="Reply"></collection>
+	</resultMap>
+	
+	<select id="selectSearchResultListCount" parameterType="SearchCondition" resultType="_int">
+		SELECT COUNT(*)
+		FROM BOARD
+			 JOIN MEMBER ON(BWRITER= USER_ID)
+		WHERE B_STATUS = 'Y'
+		<!-- if문으로 연결 -->
+		<if test="writer != null">
+			AND NICKNAME LIKE '%' || #{writer} || '%'
+		</if>
+		<if test="title != null">
+			AND BTITLE LIKE '%' || #{title} || '%'
+		</if>
+		<if test="content != null">
+			AND BCONTENT LIKE '%' || #{content} || '%'
+		</if>
+	</select>
+	
+	<select id="selectSearchResultList" parameterType="SearchCondition" resultMap="boardResultSet">
+		SELECT *
+		FROM BOARD
+			 JOIN MEMBER ON(BWRITER= USER_ID)
+		WHERE B_STATUS = 'Y'
+		<!-- <if test="writer != null">
+			AND NICKNAME LIKE '%' || #{writer} || '%'
+		</if>
+		<if test="title != null">
+			AND BTITLE LIKE '%${title}%'
+		</if>
+		<if test="content != null">
+			AND BCONTENT LIKE '%${content}%'
+		</if> -->
+		<choose>
+			<when test="writer != null">
+				AND NICKNAME LIKE '%' || #{writer} || '%'
+			</when>
+			<when test="title != null">
+				AND BTITLE LIKE '%' || #{title} || '%'
+			</when>
+			<when test="content != null">
+				AND BCONTENT LIKE '%' || #{content} || '%'
+			</when>
+		</choose>
+		ORDER BY BID DESC
+	</select>
+</mapper>

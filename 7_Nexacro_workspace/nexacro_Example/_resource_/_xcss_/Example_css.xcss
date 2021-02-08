@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XCSS version="1.0"><![CDATA[.Static
+{
+	-nexa-text-align : center;
+	color : #ffffff;
+	background : #4169E1;
+}
+.Static.title
+{
+	font : normal 700 20pt /normal "맑은 고딕";
+	background : #FFFFFF;
+	color : #000000;
+	
+}
+.Button.cancel
+{
+	-nexa-text-align : center;
+	color : #ffffff;
+	background : gray;
+}.Button
+{
+	-nexa-text-align : center;
+	color : #ffffff;
+	background : #4169E1;
+}
+.TextArea
+{
+	background : white;
+}
+]]></XCSS>

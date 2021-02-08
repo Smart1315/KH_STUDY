@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Form_Left" width="200" height="670" titletext="Form_Left">
+    <Layouts>
+      <Layout width="200" height="670" screenid="screen00">
+        <Grid id="Grid00" taborder="0" left="10" top="10" width="180" height="340" binddataset="menu_Dataset" treeinitstatus="expand,all" treeusecheckbox="false" oncellclick="Grid00_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="179"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="bind:m_name" treelevel="bind:m_level" edittype="tree" displaytype="treeitemcontrol"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:m_name" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:m_level"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[include "Work2::menu.xjs";
+
+var objApp = nexacro.getApplication();
+
+this.Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var sid = objApp.menu_Dataset.getColumn(e.row, "m_id");
+	var surl = objApp.menu_Dataset.getColumn(e.row, "m_url");
+	
+	this.xfn_open(sid, surl);
+};
+
+]]></Script>
+  </Form>
+</FDL>

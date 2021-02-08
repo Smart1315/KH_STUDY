@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XCSS version="1.0"><![CDATA[.Static.pink
+{
+	background : pink;
+	font : normal bold  14pt/normal "Arial";
+	-nexa-text-align : center;
+	-nexa-border : 2px dotted #548dd4;
+}
+
+.Static.blue
+{
+	background : blue;
+	font : normal 12pt /normal "Arial";
+	-nexa-text-align : center;
+	color : #ffffff;
+	-nexa-border : 3px solid #974806;
+}.Static[status=mouseover]
+{
+	background : red;
+	font : normal bold  20pt/normal "Arial";
+	box-shadow : 0px 0px 5px #FFFFFF;
+	-nexa-text-align : center;
+	color : #0070c0;
+}
+.Static.
+{
+}
+]]></XCSS>

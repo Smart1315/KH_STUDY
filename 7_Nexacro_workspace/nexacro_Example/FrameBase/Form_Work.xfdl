@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Form_Work" width="1080" height="670" titletext="Form_Work" onload="Form_Work_onload">
+    <Layouts>
+      <Layout width="1080" height="670" screenid="example_screen">
+        <Static id="Static00" taborder="0" text="회원가입" left="-1" top="0" width="167" height="60" onclick="Static00_onclick" cssclass="title"/>
+        <Static id="Static00_00" taborder="1" text="아이디" left="19" top="80" width="120" height="40" onclick="Static00_onclick"/>
+        <Static id="Static00_01" taborder="2" text="비밀번호" left="19" top="130" width="120" height="40" onclick="Static00_onclick"/>
+        <Static id="Static00_01_00" taborder="3" text="이름" left="20" top="180" width="120" height="40" onclick="Static00_onclick"/>
+        <Static id="Static00_01_00_00" taborder="4" text="학부" left="20" top="230" width="120" height="40" onclick="Static00_onclick"/>
+        <Static id="Static00_01_00_00_00" taborder="5" text="전화번호" left="19" top="280" width="120" height="40" onclick="Static00_onclick"/>
+        <Edit id="Edit_id" taborder="6" left="166" top="80" width="323" height="40"/>
+        <Edit id="Edit_pw" taborder="7" left="166" top="130" width="323" height="40" password="true"/>
+        <Edit id="Edit_name" taborder="8" left="167" top="180" width="323" height="40"/>
+        <Radio id="Radio_dept" taborder="9" left="167" top="230" width="323" height="40" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">java</Col>
+                <Col id="datacolumn">자바학부</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">secure</Col>
+                <Col id="datacolumn">보안학부</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <TextArea id="TextArea00" taborder="10" left="44" top="403" width="445" height="77" readonly="true" enable="true" enableevent="true"/>
+        <MaskEdit id="MaskEdit_phone" taborder="11" left="165" top="280" width="324" height="40" type="string" format="###-####-####"/>
+        <Button id="Button00" taborder="12" text="회원가입" left="80" top="350" width="141" height="37" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="13" text="취소하기" left="266" top="350" width="141" height="37" cssclass="cancel" onclick="Button01_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Form_Work_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.TextArea00.set_background("#FFFFFF");
+};
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var id = this.Edit_id;
+	var pw = this.Edit_pw;
+	var name = this.Edit_name;
+	var dept = this.Radio_dept;
+	var phone = this.MaskEdit_phone;
+	
+	var idValue = id.value;
+	var pwValue = pw.value;
+	var nameValue = name.value;
+	var deptValue = dept.text;
+	var phoneValue = phone.value;
+	
+	if(this.fn_checkNull(idValue)) {
+		id.setFocus();
+	} else if(this.fn_checkNull(pwValue)) {
+		pw.setFocus();
+	} else if(this.fn_checkNull(nameValue)) {
+		name.setFocus();
+	} else if(this.fn_checkNull(deptValue)) {
+		dept.setFocus();
+	} else if(this.fn_checkNull(phoneValue)) {
+		phone.setFocus();
+	} else if(phoneValue.trim().length < 11) {
+		this.alert("휴대폰 번호를 모두 입력하세요.");
+	} else {
+		this.TextArea00.set_value(deptValue + " " + nameValue + "(" + idValue + ") 훈련생, 응원합니다!\n핸드폰번호 : " + phoneValue);
+	}
+	
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Edit_id.set_value("");
+	this.Edit_pw.set_value("");
+	this.Edit_name.set_value("");
+	this.Radio_dept.set_index(-1);
+	this.MaskEdit_phone.set_value("");
+};
+
+this.fn_checkNull = function (value)
+{
+	if(new String(value).valueOf() == "undefined" || value.trim() == "") {
+		this.alert("비어있는 항목이 존재합니다.");
+		return true;
+	}
+	return false;
+};
+
+]]></Script>
+  </Form>
+</FDL>

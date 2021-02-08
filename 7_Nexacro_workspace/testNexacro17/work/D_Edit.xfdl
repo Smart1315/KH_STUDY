@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="D_Edit" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Edit id="Edit00" taborder="0" left="60" top="35" width="303" height="74" autoskip="true" displaynulltext="값을 입력해주세요" maxlength="5"/>
+        <Edit id="Edit00_00" taborder="1" left="60" top="114" width="303" height="74" password="true"/>
+        <Edit id="Edit00_00_00" taborder="3" left="60" top="193" width="303" height="74"/>
+        <Edit id="Edit00_00_00_00" taborder="2" left="60" top="272" width="303" height="74"/>
+        <Edit id="Edit00_00_00_00_00" taborder="4" left="60" top="351" width="303" height="74"/>
+        <Edit id="Edit00_00_00_00_01" taborder="5" left="59" top="430" width="303" height="74"/>
+        <Edit id="Edit00_00_00_00_02" taborder="6" left="57" top="509" width="303" height="74" readonly="true"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Edit00_00_onchanged = function(obj:nexacro.Edit,e:nexacro.ChangeEventInfo)
+{
+	
+};
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Form_Top" width="1280" height="50" titletext="Form_Top">
+    <Layouts>
+      <Layout width="1280" height="50" screenid="example_screen">
+        <ImageViewer id="ImageViewer00" taborder="0" text="" left="0" top="0" width="170" height="50" onclick="ImageViewer00_onclick" image="url('imagerc::top_logo.jpg')"/>
+        <Menu id="Menu00" taborder="1" left="170" top="0" width="730" height="50" innerdataset="menu_dataset" idcolumn="m_id" levelcolumn="m_level" captioncolumn="m_name"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.ImageViewer00_onclick = function(obj:nexacro.ImageViewer,e:nexacro.ClickEventInfo)
+{
+	
+};
+]]></Script>
+  </Form>
+</FDL>
